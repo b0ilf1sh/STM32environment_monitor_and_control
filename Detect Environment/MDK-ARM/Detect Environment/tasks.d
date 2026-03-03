@@ -1,0 +1,17 @@
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
+detect environment\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+detect environment\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+detect environment\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+detect environment\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+detect environment\tasks.o: ../Core/Inc/FreeRTOSConfig.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+detect environment\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stack_macros.h
+detect environment\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -1,0 +1,12 @@
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+detect environment\port.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+detect environment\port.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+detect environment\port.o: ../Core/Inc/FreeRTOSConfig.h
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+detect environment\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h

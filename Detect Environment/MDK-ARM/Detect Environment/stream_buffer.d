@@ -1,0 +1,14 @@
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
+detect environment\stream_buffer.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+detect environment\stream_buffer.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+detect environment\stream_buffer.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+detect environment\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+detect environment\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/stream_buffer.h
