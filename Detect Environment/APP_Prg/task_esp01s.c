@@ -3,7 +3,7 @@
 void task_esp01s(void *params)
 {
 	EventBits_t dht11_event;
-	uint8_t dht11_data[3]={0};
+	uint8_t dht11_data[2]={0};
 	
 	EventBits_t lightsensor_event;
 	uint8_t light_data=0;
@@ -57,13 +57,12 @@ void task_esp01s(void *params)
 				if(dht11_event & DHT11_Event_ESP01S)
 				{
 					vTaskSuspendAll();
-					dht11_data[0] = System_Data.dht11_flag;
-					dht11_data[1] = System_Data.dht11_hum;
-					dht11_data[2] = System_Data.dht11_tem;
+					dht11_data[0] = System_Data.dht11_hum;
+					dht11_data[1] = System_Data.dht11_tem;
 					xTaskResumeAll();
 				}
 				
-				esp01s_send_normalmode_data(dht11_data[1], dht11_data[2], light_data, motor_data);
+				esp01s_send_normalmode_data(dht11_data[0], dht11_data[1], light_data, motor_data);
 				
 			}
 			else if(System_Mode == SysMODE_SET)

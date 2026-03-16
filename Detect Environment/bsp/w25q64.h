@@ -14,6 +14,7 @@ extern SPI_HandleTypeDef hspi2;
 
 void W25Q64_Init(void);
 void W25Q64_ReadID(uint8_t *M_ID, uint16_t *D_ID);
+void W25Q64_EraseSector(uint32_t Address);
 void W25Q64_WritePage(uint32_t Address, uint8_t *TxData, uint16_t Size);
 void W25Q64_ReadPage(uint32_t Address, uint8_t *RxData, uint16_t Size);
 

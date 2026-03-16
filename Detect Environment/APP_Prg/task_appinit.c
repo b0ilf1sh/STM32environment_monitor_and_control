@@ -49,6 +49,10 @@ void app_init(void)
 	OLED_Update();
 	mdelay(1000);
 	
+	taskENTER_CRITICAL();
+	DHT11_Init();
+	taskEXIT_CRITICAL();
+	
 	BUZZER_Init();
 	ColorLED_Init();
 	IR_Init();
@@ -58,9 +62,9 @@ void app_init(void)
 	
 	mdelay(1000);
 	
-	W25Q64_ReadPage(0x000000, temp, sizeof(temp));
+	W25Q64_ReadPage(W25Q64_TEMP_ADDRESS, temp, sizeof(temp));
 	xQueueSend(g_xQueue_W25Q64_to_Motor,temp,0);
-	W25Q64_ReadPage(0x010000, temp, sizeof(temp));
+	W25Q64_ReadPage(W25Q64_VOLUME_ADDRESS, temp, sizeof(temp));
 	xQueueSend(g_xQueue_W25Q64_to_Buzzer,temp,0);
 	
 	OLED_Clear();

@@ -16,11 +16,11 @@ void task_w25q64(void *params)
 			
 			if((ir_rec_event & IRRec_Event_W25Q64) || (esp01s_event & ESP01S_Event_W25Q64))
 			{
-				W25Q64_ReadPage(0x000000, temp, sizeof(temp));
+				W25Q64_ReadPage(W25Q64_TEMP_ADDRESS, temp, sizeof(temp));
 				xQueueSend(g_xQueue_W25Q64_to_OLED,temp,0);
 				xQueueSend(g_xQueue_W25Q64_to_ESP01S,temp,0);
 				vTaskDelay(1);
-				W25Q64_ReadPage(0x010000, temp, sizeof(temp));
+				W25Q64_ReadPage(W25Q64_VOLUME_ADDRESS, temp, sizeof(temp));
 				xQueueSend(g_xQueue_W25Q64_to_OLED,temp,0);
 				xQueueSend(g_xQueue_W25Q64_to_ESP01S,temp,0);
 			}
@@ -30,12 +30,14 @@ void task_w25q64(void *params)
 		{
 			if(temp[0]==1)
 			{
-				W25Q64_WritePage(0x000000, temp, sizeof(temp));
+				W25Q64_EraseSector(W25Q64_TEMP_ADDRESS);
+				W25Q64_WritePage(W25Q64_TEMP_ADDRESS, temp, sizeof(temp));
 				xQueueSend(g_xQueue_W25Q64_to_Motor,temp,0);
 			}
 			else if(temp[0]==2)
 			{
-				W25Q64_WritePage(0x010000, temp, sizeof(temp));
+				W25Q64_EraseSector(W25Q64_VOLUME_ADDRESS);
+				W25Q64_WritePage(W25Q64_VOLUME_ADDRESS, temp, sizeof(temp));
 				xQueueSend(g_xQueue_W25Q64_to_Buzzer,temp,0);
 			}
 			xQueueSend(g_xQueue_W25Q64_to_ESP01S,temp,0);
@@ -45,12 +47,14 @@ void task_w25q64(void *params)
 		{
 			if(temp[0]==1)
 			{
-				W25Q64_WritePage(0x000000, temp, sizeof(temp));
+				W25Q64_EraseSector(W25Q64_TEMP_ADDRESS);
+				W25Q64_WritePage(W25Q64_TEMP_ADDRESS, temp, sizeof(temp));
 				xQueueSend(g_xQueue_W25Q64_to_Motor,temp,0);
 			}
 			else if(temp[0]==2)
 			{
-				W25Q64_WritePage(0x010000, temp, sizeof(temp));
+				W25Q64_EraseSector(W25Q64_VOLUME_ADDRESS);
+				W25Q64_WritePage(W25Q64_VOLUME_ADDRESS, temp, sizeof(temp));
 				xQueueSend(g_xQueue_W25Q64_to_Buzzer,temp,0);
 			}
 			xQueueSend(g_xQueue_W25Q64_to_OLED,temp,0);

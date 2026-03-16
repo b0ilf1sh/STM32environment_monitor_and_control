@@ -3,7 +3,7 @@
 void task_motor(void *params)
 {
 	EventBits_t dht11_event;
-	uint8_t dht11_data[3]={0};
+	uint8_t dht11_data[2]={0};
 	
 	uint8_t uSpeed;
 	uint8_t w25q64_msg[3]={0};
@@ -27,38 +27,35 @@ void task_motor(void *params)
 			if(dht11_event & DHT11_Event_Motor)
 			{
 				vTaskSuspendAll();
-				dht11_data[0] = System_Data.dht11_flag;
-				dht11_data[1] = System_Data.dht11_hum;
-				dht11_data[2] = System_Data.dht11_tem;
+				dht11_data[0] = System_Data.dht11_hum;
+				dht11_data[1] = System_Data.dht11_tem;
 				xTaskResumeAll();
 			}
-			
-			if(dht11_data[0]==0)
+						
+			if(dht11_data[1]<=w25q64_msg[1])
 			{
-				if(dht11_data[2]<=w25q64_msg[1])
-				{
-					uSpeed = 0;
-				}
-				else if((dht11_data[2]>=w25q64_msg[1]+1) && (dht11_data[2]<=w25q64_msg[2]))
-				{
-					uSpeed=dht11_data[2]*k+b+dht11_data[1]*0.2;
-					if(uSpeed < 15)
-					{
-						uSpeed = 15;
-					}
-				}
-				else if((dht11_data[2]>=w25q64_msg[2]+1) && dht11_data[2]<=50)
-				{
-					uSpeed = 100;
-				}
-				
-				xTaskNotify(g_TaskHandleBuzzer, uSpeed, eSetValueWithOverwrite);
-				xTaskNotify(g_TaskHandleOLED, uSpeed, eSetValueWithOverwrite);
-				xTaskNotify(g_TaskHandleColorLED, uSpeed, eSetValueWithOverwrite);
-				xTaskNotify(g_TaskHandleESP01S, uSpeed, eSetValueWithOverwrite);
-
-				Motor_SetSpeed(uSpeed);
+				uSpeed = 0;
 			}
+			else if((dht11_data[1]>=w25q64_msg[1]+1) && (dht11_data[1]<=w25q64_msg[2]))
+			{
+				uSpeed=dht11_data[1]*k+b+dht11_data[0]*0.2;
+				if(uSpeed < 15)
+				{
+					uSpeed = 15;
+				}
+			}
+			else if((dht11_data[1]>=w25q64_msg[2]+1) && dht11_data[1]<=50)
+			{
+				uSpeed = 100;
+			}
+			
+			xTaskNotify(g_TaskHandleBuzzer, uSpeed, eSetValueWithOverwrite);
+			xTaskNotify(g_TaskHandleOLED, uSpeed, eSetValueWithOverwrite);
+			xTaskNotify(g_TaskHandleColorLED, uSpeed, eSetValueWithOverwrite);
+			xTaskNotify(g_TaskHandleESP01S, uSpeed, eSetValueWithOverwrite);
+
+			Motor_SetSpeed(uSpeed);
+
 		}
 		else if(System_Mode == SysMODE_SET)
 		{

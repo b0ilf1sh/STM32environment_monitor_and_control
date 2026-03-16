@@ -12,7 +12,7 @@ void task_oled(void *params)
 	sysmode_t oled_state=SysMODE_STBY;
 	
 	EventBits_t dht11_event;
-	uint8_t dht11_data[3]={0};
+	uint8_t dht11_data[2]={0};
 	
 	EventBits_t lightsensor_event;
 	uint8_t light_data=0;
@@ -60,9 +60,8 @@ void task_oled(void *params)
 			if(dht11_event & DHT11_Event_OLED)
 			{
 				vTaskSuspendAll();//暂停调度，防止接收到一半数据后跳转到别的任务，可能导致数据不是同时产生的
-				dht11_data[0] = System_Data.dht11_flag;
-				dht11_data[1] = System_Data.dht11_hum;
-				dht11_data[2] = System_Data.dht11_tem;
+				dht11_data[0] = System_Data.dht11_hum;
+				dht11_data[1] = System_Data.dht11_tem;
 				xTaskResumeAll();
 			}
 			
@@ -72,21 +71,9 @@ void task_oled(void *params)
 				light_data = System_Data.lightsensor_light;
 			}
 			
-			if(dht11_data[0] == 0)
-			{
-				OLED_Printf(0, 0, OLED_8X16, "湿度:%d%%",dht11_data[1]);
-				OLED_Printf(0, 16, OLED_8X16, "温度:%d℃",dht11_data[2]);
-			}
-			else if(dht11_data[0] == 1)
-			{
-				OLED_Printf(0, 0, OLED_8X16, "信号错误");
-				OLED_Printf(0, 16, OLED_8X16, "信号错误");
-			}
-			else if(dht11_data[0] == 2)
-			{
-				OLED_Printf(0, 0, OLED_8X16, "数据错误");
-				OLED_Printf(0, 16, OLED_8X16, "数据错误");
-			}
+
+			OLED_Printf(0, 0, OLED_8X16, "湿度:%d%%",dht11_data[0]);
+			OLED_Printf(0, 16, OLED_8X16, "温度:%d℃",dht11_data[1]);
 			
 			OLED_Printf(0, 32, OLED_8X16, "亮度:%d%%",light_data);
 			OLED_Printf(0, 48, OLED_8X16, "速度:%d%%",motor_data);

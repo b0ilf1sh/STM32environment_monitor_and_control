@@ -1,5 +1,9 @@
 #include "DHT11.h"
 
+uint8_t DHT11_TEMP_DATA[DHT11_DATA_NUM] = {0};//存储温度
+uint8_t DHT11_HUM_DATA[DHT11_DATA_NUM] = {0};//存储湿度
+uint8_t DHT11_NUM=0;//记录存到第几个数据
+
 void DHT11_W_Pin(uint8_t PinState)
 {
 	if(PinState)
@@ -116,4 +120,35 @@ uint8_t DHT11_GetData(uint8_t *humidity, uint8_t *temperature)
 	{
 		return 1;
 	}
+}
+
+void DHT11_Init(void)
+{
+	uint8_t hum=0,tem=0;
+	DHT11_GetData(&hum, &tem);
+	for(uint8_t i=0;i<DHT11_DATA_NUM; i++)
+	{
+		DHT11_HUM_DATA[i] = hum;
+		DHT11_TEMP_DATA[i] = tem;
+	}
+}
+
+//获取成功获得的数据的平均值
+void DHT11_Run(uint8_t *humidity, uint8_t *temperature)
+{
+	uint16_t hum_sum=0,temp_sum=0;
+	
+	if(DHT11_GetData(&DHT11_HUM_DATA[DHT11_NUM], &DHT11_TEMP_DATA[DHT11_NUM])==0)
+	{
+		DHT11_NUM = (DHT11_NUM + 1) % DHT11_DATA_NUM;
+	}
+	
+	for(uint8_t i=0; i<DHT11_DATA_NUM; i++)
+	{
+		hum_sum += DHT11_HUM_DATA[i];
+		temp_sum += DHT11_TEMP_DATA[i];
+	}
+	
+	*humidity = hum_sum / DHT11_DATA_NUM;
+	*temperature = temp_sum / DHT11_DATA_NUM;
 }

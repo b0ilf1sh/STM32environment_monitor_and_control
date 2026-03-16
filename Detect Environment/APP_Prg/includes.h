@@ -34,6 +34,9 @@
 #define LightSensor_Event_ESP01S    (1<<2)
 #define LightSensor_Event_All   (LightSensor_Event_OLED | LightSensor_Event_ColorLED | LightSensor_Event_ESP01S)
 
+#define W25Q64_TEMP_ADDRESS      0x002000    //ÎÂ¶È´æ´¢µØÖ·
+#define W25Q64_VOLUME_ADDRESS    0x003000    //ÒôÁ¿´æ´¢µØÖ·
+
 typedef enum{
 	SysMODE_STBY=0,
 	SysMODE_NORM=1,
@@ -41,7 +44,6 @@ typedef enum{
 }sysmode_t;
 
 typedef struct{
-	uint8_t dht11_flag;
 	uint8_t dht11_hum;
 	uint8_t dht11_tem;
 	uint8_t lightsensor_light;
