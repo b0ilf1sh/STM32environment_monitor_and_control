@@ -1,7 +1,8 @@
 #ifndef _MUSIC_H_
 #define _MUSIC_H_
 
-#include "hardware.h"
+#include "main.h"
+#include "BUZZER.h"
 
 extern const uint64_t test_l_music[];
 extern const uint64_t test_m_music[];

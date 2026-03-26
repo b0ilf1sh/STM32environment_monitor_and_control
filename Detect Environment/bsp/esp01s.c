@@ -1,530 +1,264 @@
-#include "esp01s.h"
+#include "ESP01S.h"
 
-char esp01s_txtext[256];
-char esp01s_rxtext[128];
-char esp01s_datatext[128];
-uint8_t data_flag=0;
-uint8_t esp01s_datapointer=0;
-uint8_t esp01s_rxpointer=0;
-uint8_t rxdata;
-uint8_t esp01s_connectstate=0;
+uint8_t ESP01S_REC_RING_BUFF[ESP01S_REC_RING_BUFF_LEN]={0};//环形缓冲区
+uint8_t ESP01S_REC_BUFF[ESP01S_REC_BUFF_LEN]={0};//串口中断接收缓存
+uint8_t ESP01S_READ_BUFF[ESP01S_READ_BUFF_LEN]={0};//读取缓存
+uint16_t Write_Index=0;//环形缓冲区写索引
+uint16_t Read_Index=0;//环形缓冲区读索引
+uint16_t ESP01S_Data_Length=0;//记录读了多少缓冲区数据
+uint8_t ESP01S_MQTT_REC_BUFF[ESP01S_MQTT_REC_BUFF_LEN]={0};//MQTT接收函数
+uint8_t ESP01S_PROTOCOL_FLAG=0;//用来确定当前以什么协议连接ONENET，0为OTA，1为MQTT
+uint8_t ESP01S_REC_BUFF_FLAG=0;//确定将数据存入哪个数组中，0为OTA，1为MQTT
 
-void esp01s_sendstring(char *string)
+//环形缓冲区初始化
+void ESP01S_RING_BUFFER_Init(void)
 {
-	HAL_UART_Transmit(&huart2, (const uint8_t *)string, strlen(string), HAL_MAX_DELAY);
+    Write_Index=0;//环形缓冲区写索引
+    Read_Index=0;//环形缓冲区读索引
+    memset(ESP01S_REC_RING_BUFF, 0, ESP01S_REC_RING_BUFF_LEN);//清空环形缓冲区
 }
 
-void esp01s_RX_IT_Start(void)
+//计算环形缓冲区中数据数量
+uint16_t ESP01S_RING_BUFFER_GET_DATA_LENGTH(void)
 {
-	HAL_UART_Receive_IT(&huart2, &rxdata, 1);
+    //如果写索引差一个数据等于读索引，此时可以认为缓冲区满了
+    if((Write_Index + 1) % ESP01S_REC_RING_BUFF_LEN == Read_Index)
+    {
+        return ESP01S_REC_RING_BUFF_LEN;
+    }
+
+    if(Write_Index > Read_Index)//写索引大于读索引
+    {
+        return Write_Index - Read_Index;
+    }
+    else if(Write_Index < Read_Index)//写索引小于读索引
+    {
+        return ESP01S_REC_RING_BUFF_LEN + Write_Index - Read_Index;
+    }
+    else//写索引等于读索引，此时缓冲区为空
+    {
+        return 0;
+    }
 }
 
-void esp01s_ClearRxData(void)
+//计算缓冲区剩余空间大小
+uint16_t ESP01S_RING_BUFFER_GET_IDLE_LENGTH(void)
 {
-	memset(esp01s_rxtext, 0, sizeof(esp01s_rxtext)); 
-	esp01s_rxpointer=0;
+    return ESP01S_REC_RING_BUFF_LEN - ESP01S_RING_BUFFER_GET_DATA_LENGTH();
 }
 
-uint8_t esp01s_process(void)
+//写环形缓冲区
+void ESP01S_WRITE_RING_BUFFER(uint8_t *data,uint16_t size)
 {
-	if(strstr((char *)esp01s_rxtext, "OK"))
-	{
-		return 1;
-	}
-	else if(strstr((char *)esp01s_rxtext, "ERROR"))
-	{
-		return 0;
-	}
-	return 0;
+    if(ESP01S_RING_BUFFER_GET_IDLE_LENGTH() <= size)//剩余空间小于等于写入数据长度，则将数据丢弃
+    {
+        return;
+    }
+    else  //剩余空间大于数据长度，则将数据保存
+    {
+        if(Write_Index + size < ESP01S_REC_RING_BUFF_LEN)//如果当前写入数据后未到达缓冲区末尾
+        {
+            memcpy(ESP01S_REC_RING_BUFF + Write_Index, data, size);
+            Write_Index += size;
+        }
+        else//如果当前写入数据后会到达缓冲区末尾，则需要分两段写
+        {
+            memcpy(ESP01S_REC_RING_BUFF + Write_Index, data, ESP01S_REC_RING_BUFF_LEN - Write_Index);//先写第一段直接到达末尾
+            memcpy(ESP01S_REC_RING_BUFF, data + ESP01S_REC_RING_BUFF_LEN - Write_Index, size - ESP01S_REC_RING_BUFF_LEN + Write_Index);//再写第二段
+            Write_Index = (Write_Index + size) % ESP01S_REC_RING_BUFF_LEN;
+        }
+    }
 }
 
-uint8_t esp01s_Reset(void)
+//从环形缓冲区读取数据
+uint16_t ESP01S_READ_RING_BUFFER(void)
 {
-	uint16_t t=20000;
-	esp01s_ClearRxData();
-	esp01s_sendstring("AT+RST\r\n");
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+    //判断缓冲区是否有数据
+    if(ESP01S_RING_BUFFER_GET_DATA_LENGTH()==0)//没有数据，读取失败
+    {
+        return 0;
+    }
+    else//还有数据，读取一个字节
+    {
+        ESP01S_READ_BUFF[ESP01S_Data_Length] = ESP01S_REC_RING_BUFF[Read_Index];
+        ESP01S_Data_Length++;
+        Read_Index = (Read_Index + 1) % ESP01S_REC_RING_BUFF_LEN;
+
+        return 1;
+    }
 }
 
-uint8_t esp01s_Test(void)
+void ESP01S_CLEAR_READ_BUFF(void)
 {
-	uint16_t t=5000;
-	esp01s_ClearRxData();
-	esp01s_sendstring("AT\r\n");
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+    ESP01S_Data_Length = 0;
+    memset(ESP01S_READ_BUFF, 0, ESP01S_READ_BUFF_LEN);
 }
 
-uint8_t esp01s_CloseEcho(void)
+void ESP01S_Printf(const char* format, ...)
 {
-	uint16_t t=5000;
-	esp01s_ClearRxData();
-	esp01s_sendstring("ATE0\r\n");
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+    char buffer[512];  // 根据你的需要调整大小
+    va_list args;
+    
+    va_start(args, format);
+    vsnprintf(buffer, sizeof(buffer), format, args);
+    va_end(args);
+    
+    // 通过串口2发送给ESP-01S
+    HAL_UART_Transmit(&huart2, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
 }
 
-uint8_t esp01s_SetWifiMode(uint8_t WifiMode)
+//初始化串口接收
+void ESP01S_UART_Init(void)
 {
-	uint16_t t=5000;
-	esp01s_ClearRxData();
-	sprintf(esp01s_txtext,"AT+CWMODE=%d\r\n",WifiMode);
-	esp01s_sendstring(esp01s_txtext);
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+    //清空串口初始化前的所有问题
+    __HAL_UART_CLEAR_OREFLAG(&huart2);
+    __HAL_UART_CLEAR_IDLEFLAG(&huart2); 
+    //关闭DMA过半中断
+    __HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_HT);
+    //串口中断接收函数
+    HAL_UARTEx_ReceiveToIdle_DMA(&huart2, ESP01S_REC_BUFF, ESP01S_REC_BUFF_LEN);//使用串口空闲中断加DMA接收数据
 }
 
-uint8_t esp01s_ConnectWifi(void)
+//清空缓存
+void ESP01S_ClearBuff(void)
 {
-	uint16_t t=50000;
-	esp01s_ClearRxData();
-	sprintf(esp01s_txtext,"AT+CWJAP=\"%s\",\"%s\"\r\n",WIFI_SSID,WIFI_PWD);
-	esp01s_sendstring(esp01s_txtext);
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+    memset(ESP01S_REC_BUFF, 0, ESP01S_REC_BUFF_LEN);
 }
 
-uint8_t esp01s_ConnectOnenet(void)
+//等待应答
+uint8_t ESP01S_WaitAck(char *string, uint16_t timeout_ms)
 {
-	uint16_t t=5000;
-	esp01s_ClearRxData();
-	sprintf(esp01s_txtext,"AT+MQTTUSERCFG=0,1,%s,%s,%s,0,0,\"\"\r\n",client_id,username,password);//�����û�����
-	esp01s_sendstring(esp01s_txtext);
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		printf("Set UserConfig OK\r\n");
-	}
-	else
-	{
-		printf("Set UserConfig Err\r\n");
-		return 1;
-	}
-	
-	t=60000;
-	esp01s_ClearRxData();
-	sprintf(esp01s_txtext,"AT+MQTTCONN=0,%s,%d,0\r\n",host,port);//���ӷ���������
-	esp01s_sendstring(esp01s_txtext);
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		printf("Connect to MQTT Broker OK\r\n");
-	}
-	else
-	{
-		printf("Connect to MQTT Broker Err\r\n");
-		return 2;
-	}
-	
-	return 0;
+    uint32_t start_time = HAL_GetTick();//记录开始时间
+    while(HAL_GetTick() - start_time < timeout_ms)
+    {
+        if(ESP01S_READ_RING_BUFFER())//如果从缓冲区中读到了数据
+        {
+            if(strstr((char *)ESP01S_READ_BUFF, (char *)string)!=NULL)
+            {
+                return 1;
+            }
+        }
+    }
+    return 0;
 }
 
-uint8_t esp01s_Onenet_PostandSet(void)
+void ESP01S_INFORMATION(void)
 {
-	uint16_t t=5000;
-	esp01s_ClearRxData();
-	sprintf(esp01s_txtext,"AT+MQTTSUB=0,%s,0\r\n",Post_Topic);//����Post
-	esp01s_sendstring(esp01s_txtext);
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		printf("Onenet Post OK\r\n");
-	}
-	else
-	{
-		printf("Onenet Post Err\r\n");
-		return 1;
-	}
-	
-	t=20000;
-	esp01s_ClearRxData();
-	sprintf(esp01s_txtext,"AT+MQTTSUB=0,%s,0\r\n",Set_Topic);//����Set
-	esp01s_sendstring(esp01s_txtext);
-	while(t)
-	{
-		if(esp01s_process()) break;
-		t--;
-	}
-	if(t>0)
-	{
-		printf("Onenet Set OK\r\n");
-	}
-	else
-	{
-		printf("Onenet Set Err\r\n");
-		return 1;
-	}
-	
-	return 0;
+    printf("Wirte_Index=%d\r\n",Write_Index);
+    printf("Read_Index=%d\r\n",Read_Index);
+    for(uint16_t i=0;i<ESP01S_Data_Length;i++)
+    {
+        printf("%c",ESP01S_READ_BUFF[i]);
+    }
+    printf("\r\n");
 }
 
-uint8_t esp01s_Init(void)
+//初始化ESP01S,并且连接到WIFI
+uint8_t ESP01S_Init(void)
 {
-	esp01s_RX_IT_Start();//����esp01s�Ĵ��ڽ����ж�
-	
-	if(esp01s_Reset()==0)//����esp01s�Ƿ������ɹ�
-	{
-		printf("Reset Esp Err\r\n");
-		return 0;
-	}
-	printf("Reset Esp OK\r\n");
-	
-	mdelay(1000);
-	esp01s_ClearRxData(); 
-	memset(esp01s_datatext, 0, sizeof(esp01s_datatext)); 
-	esp01s_datapointer=0;
-	
-	if(esp01s_Test()==0)//����esp01s�Ƿ������ɹ�
-	{
-		printf("Find Esp Err\r\n");
-		return 0;
-	}
-	printf("Find Esp OK\r\n");
+    //先开启串口中断
+    ESP01S_UART_Init();
+    //初始化环形缓冲区
+    ESP01S_RING_BUFFER_Init();
 
-	if(esp01s_CloseEcho()==0)//esp01s�رջ���
-	{
-		printf("Close Echo Err\r\n");
-		return 0;
-	}
-	printf("Close Echo OK\r\n");
-	
-	if(esp01s_SetWifiMode(Station_Mode)==0)//ѡ��esp01sWIFIģʽ
-	{
-		printf("Set Wifi-Mode Err\r\n");
-		return 0;
-	}
-	printf("Set Wifi-Mode OK\r\n");
-	
-	if(esp01s_ConnectWifi()==0)//esp01s����WIFI
-	{
-		printf("Connect Wifi Err\r\n");
-		return 0;
-	}
-	printf("Connect Wifi OK\r\n");
-	
-	if(esp01s_ConnectOnenet()!=0)
-	{
-		return 0;
-	}
-	printf("Connect Onenet OK\r\n");
-	
-	if(esp01s_Onenet_PostandSet()!=0)
-	{
-		return 0;
-	}
-	printf("Sub Onenet OK\r\n");
-	
-	printf("esp01s init OK\r\n");
-	esp01s_connectstate = 1;
-	
-	return 1;
+    //先复位ESP01S,并等待2秒将初始化内容删除
+    ESP01S_CLEAR_READ_BUFF();
+    ESP01S_Printf("AT+RST\r\n");
+    if(ESP01S_WaitAck("OK", 5000)==1)
+    {
+        printf("ESP01S RESET OK\r\n");
+    }
+    else
+    {
+        printf("ESP01S RESET ERROR\r\n");
+        return 1;
+    }
+
+    mdelay(2000);
+    //ESP01S复位后会发送大量信息，可能会造成错误，这里需要重新开启串口中断
+    ESP01S_UART_Init();
+    ESP01S_RING_BUFFER_Init();
+    
+    //在发送AT进行测试
+    ESP01S_CLEAR_READ_BUFF();//清空缓存
+    ESP01S_Printf("AT\r\n");
+    if(ESP01S_WaitAck("OK", 2000)==1)
+    {
+        printf("ESP01S TEST OK\r\n");
+    }
+    else
+    {
+        printf("ESP01S TEST ERROR\r\n");
+        return 2;
+    }
+    
+    //关闭回显
+    ESP01S_CLEAR_READ_BUFF();
+    ESP01S_Printf("ATE0\r\n");
+    if(ESP01S_WaitAck("OK", 2000)==1)
+    {
+        printf("ESP01S CLOSE ECHO OK\r\n");
+    }
+    else
+    {
+        printf("ESP01S CLOSE ECHO ERROR\r\n");
+        return 3;
+    }
+    
+    //设置ESP01S为WIFI模式
+    ESP01S_CLEAR_READ_BUFF();
+    ESP01S_Printf("AT+CWMODE=1\r\n");
+    if(ESP01S_WaitAck("OK", 2000)==1)
+    {
+        printf("ESP01S WIFI MODE OK\r\n");
+    }
+    else
+    {
+        printf("ESP01S WIFI MODE ERROR\r\n");
+        return 4;
+    }
+    
+    //连接WIFI
+    ESP01S_CLEAR_READ_BUFF();
+    ESP01S_Printf("AT+CWJAP=\"%s\",\"%s\"\r\n",WIFI_SSID,WIFI_PWD);
+    if(ESP01S_WaitAck("OK", 5000)==1)
+    {
+        printf("ESP01S CONNECT WIFI OK\r\n");
+    }
+    else
+    {
+        printf("ESP01S CONNECT WIFI ERROR\r\n");
+        return 5;
+    }
+
+    printf("ESP01S INIT OK\r\n");
+    return 0;
 }
 
-void esp01s_senddata(char *tag, uint32_t data)
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-	sprintf(esp01s_txtext,"AT+MQTTPUB=0,%s,"
-						"\"{"
-							"\\\"id\\\":\\\"123\\\"\\\,"
-							"\\\"params\\\":{"
-										 "%s:{\\\"value\\\":%d\\\}"
-										"}"
-                            "}\""
-	       ",0,0\r\n",Post_Topic,tag,data);//������Ϣ
-	esp01s_sendstring(esp01s_txtext);
-	osDelay(10);
-//	printf(esp01s_rxtext);
-//	printf("\r\n");
-	if(esp01s_process())
-	{
-		esp01s_ClearRxData();
-	}
-	osDelay(100);
-}
-
-void esp01s_send_normalmode_data(uint8_t hum, uint8_t tem, uint8_t light, uint8_t speed)
-{
-	sprintf(esp01s_txtext,"AT+MQTTPUB=0,%s,"
-						"\"{"
-							"\\\"id\\\":\\\"123\\\"\\\,"
-							"\\\"params\\\":{"
-										 "%s:{\\\"value\\\":%d\\\}\\\,"
-	                                     "%s:{\\\"value\\\":%d\\\}\\\,"
-	                                     "%s:{\\\"value\\\":%d\\\}\\\,"
-	                                     "%s:{\\\"value\\\":%d\\\}"
-										"}"
-                            "}\""
-	       ",0,0\r\n",Post_Topic,APP_HUM,hum,APP_TEM,tem,APP_BRT,light,APP_SPEED,speed);//������Ϣ
-	esp01s_sendstring(esp01s_txtext);
-	osDelay(5);
-//	printf(esp01s_rxtext);
-//	printf("\r\n");
-	if(esp01s_process())
-	{
-		esp01s_ClearRxData();
-	}
-	osDelay(100);
-}
-
-void esp01s_send_setmode_temdata(uint8_t tem1, uint8_t tem2)
-{
-	sprintf(esp01s_txtext,"AT+MQTTPUB=0,%s,"
-						"\"{"
-							"\\\"id\\\":\\\"123\\\"\\\,"
-							"\\\"params\\\":{"
-										 "%s:{\\\"value\\\":%d\\\}\\\,"
-	                                     "%s:{\\\"value\\\":%d\\\}"
-										"}"
-                            "}\""
-	       ",0,0\r\n",Post_Topic,APP_TEM1,tem1,APP_TEM2,tem2);//������Ϣ
-	esp01s_sendstring(esp01s_txtext);
-	osDelay(5);
-//	printf(esp01s_rxtext);
-//	printf("\r\n");
-	if(esp01s_process())
-	{
-		esp01s_ClearRxData();
-	}
-	osDelay(100);
-}
-
-void esp01s_send_setmode_volumedata(uint8_t volume1, uint8_t volume2)
-{
-	sprintf(esp01s_txtext,"AT+MQTTPUB=0,%s,"
-						"\"{"
-							"\\\"id\\\":\\\"123\\\"\\\,"
-							"\\\"params\\\":{"
-										 "%s:{\\\"value\\\":%d\\\}\\\,"
-	                                     "%s:{\\\"value\\\":%d\\\}"
-										"}"
-                            "}\""
-	       ",0,0\r\n",Post_Topic,APP_VOLUME1,volume1,APP_VOLUME2,volume2);//������Ϣ
-	esp01s_sendstring(esp01s_txtext);
-	osDelay(5);
-//	printf(esp01s_rxtext);
-//	printf("\r\n");
-	if(esp01s_process())
-	{
-		esp01s_ClearRxData();
-	}
-	osDelay(100);
-}
-
-uint8_t esp01s_getdata(char *tag, uint8_t *data)
-{
-	char *data_ptr = strstr((char *)esp01s_datatext, tag);
-	if(data_ptr)
-	{
-		if(sscanf(data_ptr+strlen(tag)+1,"%u",data))
-		{
-//			printf(esp01s_datatext);
-//			printf("\r\n");
-			memset(esp01s_datatext, 0, sizeof(esp01s_datatext)); 
-			esp01s_datapointer=0;
-			return 1;
-		}
-		else
-		{
-			return 0;
-		}
-	}
-	else
-	{
-//		printf("err\r\n");
-		return 0;
-	}
-}
-
-uint8_t esp01s_gettemdata(uint8_t *tem1,uint8_t *tem2)
-{
-	char *data_ptr = strstr((char *)esp01s_datatext, APP_TEM1_Get);
-	if(data_ptr)
-	{
-		if(sscanf(data_ptr+strlen(APP_TEM1_Get)+1,"%u",tem1))
-		{
-			data_ptr = strstr((char *)esp01s_datatext, APP_TEM2_Get);
-			if(data_ptr)
-			{
-				if(sscanf(data_ptr+strlen(APP_TEM2_Get)+1,"%u",tem2))
-				{
-//					printf(esp01s_datatext);
-//					printf("\r\n");
-					memset(esp01s_datatext, 0, sizeof(esp01s_datatext)); 
-					esp01s_datapointer=0;
-					return 1;
-				}
-				else
-				{
-					return 0;
-				}
-			}
-			else
-			{
-				return 0;
-			}
-		}
-		else
-		{
-			return 0;
-		}
-	}
-	else
-	{
-//		printf("err\r\n");
-		return 0;
-	}
-}
-
-uint8_t esp01s_getvolumedata(uint8_t *volume1,uint8_t *volume2)
-{
-	char *data_ptr = strstr((char *)esp01s_datatext, APP_VOLUME1_Get);
-	if(data_ptr)
-	{
-		if(sscanf(data_ptr+strlen(APP_VOLUME1_Get)+1,"%u",volume1))
-		{
-			data_ptr = strstr((char *)esp01s_datatext, APP_VOLUME2_Get);
-			if(data_ptr)
-			{
-				if(sscanf(data_ptr+strlen(APP_VOLUME2_Get)+1,"%u",volume2))
-				{
-//					printf(esp01s_datatext);
-//					printf("\r\n");
-					memset(esp01s_datatext, 0, sizeof(esp01s_datatext)); 
-					esp01s_datapointer=0;
-					return 1;
-				}
-				else
-				{
-					return 0;
-				}
-			}
-			else
-			{
-				return 0;
-			}
-		}
-		else
-		{
-			return 0;
-		}
-	}
-	else
-	{
-//		printf("err\r\n");
-		return 0;
-	}
-}
-
-uint8_t Esp01s_GetConnectState(void)
-{
-	if(strstr((char *)esp01s_rxtext, "WIFI DISCONNECT") || strstr((char *)esp01s_rxtext, "MQTTDISCONNECTED"))
-	{
-		esp01s_ClearRxData();
-		esp01s_connectstate=0;
-	}
-	return esp01s_connectstate;
-}
-
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
-//	static uint8_t s=0;
-	if(huart==&huart2)
-	{
-		if(rxdata == '{')
-		{
-			data_flag=1;
-		}
-		else if(rxdata == '}')
-		{
-			data_flag=0;
-		}
-		
-		if(data_flag == 0)
-		{
-			esp01s_rxtext[esp01s_rxpointer]=rxdata;
-			esp01s_rxpointer++;
-			if(esp01s_rxpointer>=sizeof(esp01s_rxtext))
-			{
-				esp01s_rxpointer=0;
-			}
-		}
-		else if(data_flag == 1)
-		{
-			esp01s_datatext[esp01s_datapointer]=rxdata;
-			esp01s_datapointer++;
-			if(esp01s_datapointer>=sizeof(esp01s_datatext))
-			{
-				esp01s_datapointer=0;
-			}
-		}
-
-		esp01s_RX_IT_Start();
-	}
+    if(huart->Instance==USART2)
+    {
+        if(ESP01S_REC_BUFF_FLAG == 0)//此时为OTA程序开始接收
+        {
+            //将接收到的数据写入缓冲区
+            ESP01S_WRITE_RING_BUFFER(ESP01S_REC_BUFF, Size);
+        }
+        else//MQTT接收
+        {
+            //将数据写入MQTT的缓存区
+            memcpy(ESP01S_MQTT_REC_BUFF, ESP01S_REC_BUFF, Size);
+            //判断是否与WIFI或服务器断开连接
+            if(Size<25)
+            {
+                if(strstr((char *)ESP01S_MQTT_REC_BUFF, "WIFI DISCONNECT") || strstr((char *)ESP01S_MQTT_REC_BUFF, "MQTTDISCONNECTED"))
+                {
+                    MQTT_ConnectState = 1;
+                }
+            }
+        }
+        
+        ESP01S_ClearBuff();//清空接收数组
+		ESP01S_UART_Init();//重新开启中断
+    }
 }

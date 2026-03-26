@@ -32,6 +32,13 @@ void task_oled(void *params)
 	uint8_t tem_y=24,volume_y=24;
 	uint8_t ChangeState=0;
 	float Battery_Value;
+
+	int16_t version_integer=0,version_decimals=0;//è®°å½•è½¯ä»¶ç‰ˆæœ¬ä¿¡æ¯
+
+	uint8_t version[8]={0};
+    W25Q64_ReadPage(OTA_APP_LEN_ADDR+4, version, 8);
+    version_integer = version[0] | (version[1]<<8) | (version[2]<<16) | (version[3]<<24);//æ•´æ•°éƒ¨åˆ†
+    version_decimals = version[4] | (version[5]<<8) | (version[6]<<16) | (version[7]<<24);//å°æ•°éƒ¨åˆ†
 	
 	while(1)
 	{
@@ -50,7 +57,8 @@ void task_oled(void *params)
 		
 		if(System_Mode == SysMODE_STBY)
 		{
-			OLED_ShowString(0, 0, "´ı»úÄ£Ê½", OLED_8X16);
+			OLED_ShowString(0, 0, "standy mode", OLED_8X16);
+			OLED_Printf(0, 48, OLED_8X16, "V%d.%d",version_integer,version_decimals);
 		}
 		else if(System_Mode == SysMODE_NORM)
 		{
@@ -59,7 +67,7 @@ void task_oled(void *params)
 			dht11_event = xEventGroupWaitBits(g_xEventDHT11, DHT11_Event_OLED, pdTRUE, pdTRUE, 0);
 			if(dht11_event & DHT11_Event_OLED)
 			{
-				vTaskSuspendAll();//ÔİÍ£µ÷¶È£¬·ÀÖ¹½ÓÊÕµ½Ò»°ëÊı¾İºóÌø×ªµ½±ğµÄÈÎÎñ£¬¿ÉÄÜµ¼ÖÂÊı¾İ²»ÊÇÍ¬Ê±²úÉúµÄ
+				vTaskSuspendAll();//æš‚åœè°ƒåº¦ï¼Œé˜²æ­¢æ¥æ”¶åˆ°ä¸€åŠæ•°æ®åè·³è½¬åˆ°åˆ«çš„ä»»åŠ¡ï¼Œå¯èƒ½å¯¼è‡´æ•°æ®ä¸æ˜¯åŒæ—¶äº§ç”Ÿçš„
 				dht11_data[0] = System_Data.dht11_hum;
 				dht11_data[1] = System_Data.dht11_tem;
 				xTaskResumeAll();
@@ -72,11 +80,11 @@ void task_oled(void *params)
 			}
 			
 
-			OLED_Printf(0, 0, OLED_8X16, "Êª¶È:%d%%",dht11_data[0]);
-			OLED_Printf(0, 16, OLED_8X16, "ÎÂ¶È:%d¡æ",dht11_data[1]);
+			OLED_Printf(0, 0, OLED_8X16, "hum:%d%%",dht11_data[0]);
+			OLED_Printf(0, 16, OLED_8X16, "tem:%d",dht11_data[1]);
 			
-			OLED_Printf(0, 32, OLED_8X16, "ÁÁ¶È:%d%%",light_data);
-			OLED_Printf(0, 48, OLED_8X16, "ËÙ¶È:%d%%",motor_data);
+			OLED_Printf(0, 32, OLED_8X16, "light:%d%%",light_data);
+			OLED_Printf(0, 48, OLED_8X16, "speed:%d%%",motor_data);
 		}
 		else if(System_Mode == SysMODE_SET)
 		{
@@ -132,10 +140,10 @@ void task_oled(void *params)
 					select_module_y=Forth_Line;
 				}
 				
-				OLED_ShowString(0, 0, "ÉèÖÃÄ£Ê½", OLED_8X16);
-				OLED_ShowString(0, 16, "ÎÂ¶ÈãĞÖµÉèÖÃ", OLED_8X16);
-				OLED_ShowString(0, 32, "ÒôÁ¿ÉèÖÃ", OLED_8X16);
-				OLED_ShowString(0, 48, "ESP01SÉèÖÃ", OLED_8X16);
+				OLED_ShowString(0, 0, "set mode", OLED_8X16);
+				OLED_ShowString(0, 16, "tem set", OLED_8X16);
+				OLED_ShowString(0, 32, "volume set", OLED_8X16);
+				OLED_ShowString(0, 48, "ESP01S set", OLED_8X16);
 				OLED_ReverseArea(0, select_module_y, 128, 16);
 			}
 			else if(ChangeModelu == 1)
@@ -230,7 +238,7 @@ void task_oled(void *params)
 						
 						Radius = (Radius + 1) % 5;
 					}
-					OLED_ShowString(0, 0, "ÎÂ¶ÈãĞÖµÉèÖÃ", OLED_8X16);
+					OLED_ShowString(0, 0, "tem set", OLED_8X16);
 					OLED_Printf(16, 16, OLED_8X16, "0 ~ %d",tem[1]);
 					OLED_Printf(16, 32, OLED_8X16, "%d ~ %d",tem[1]+1,tem[2]);
 					OLED_Printf(16, 48, OLED_8X16, "%d ~ 50",tem[2]+1);
@@ -295,9 +303,9 @@ void task_oled(void *params)
 						
 						Radius = (Radius + 1) % 5;
 					}
-					OLED_ShowString(0, 0, "ÒôÁ¿ÉèÖÃ", OLED_8X16);
-					OLED_Printf(16, 16, OLED_8X16, "°´¼üÒôÁ¿:%d",volume[1]);
-					OLED_Printf(16, 32, OLED_8X16, "¾¯±¨ÒôÁ¿:%d",volume[2]);
+					OLED_ShowString(0, 0, "volume set", OLED_8X16);
+					OLED_Printf(16, 16, OLED_8X16, "key volume:%d",volume[1]);
+					OLED_Printf(16, 32, OLED_8X16, "alarm volume:%d",volume[2]);
 					OLED_DrawCircle(8, volume_y, Radius, OLED_FILLED);
 				}
 				else if(select_module_y == Forth_Line)
@@ -309,29 +317,29 @@ void task_oled(void *params)
 					
 					if(Esp01s_y == Third_Line && (ir_rec_event & IRRec_Event_OLED_SetStart))
 					{
-						OLED_ShowString(0, 24, "ÕıÔÚÖØÁ¬...", OLED_8X16);
+						OLED_ShowString(0, 24, "reconnect...", OLED_8X16);
 						OLED_Update();
-						esp01s_flag = esp01s_Init();
+						MQTT_CONNECT_FLAG = MQTT_Init();
 						OLED_Clear();
 					}
 					
-					OLED_ShowString(0, 0, "ESP01SÉèÖÃ", OLED_8X16);
-					OLED_ShowString(0, 16, "ÊÇ·ñÁ¬½Ó:", OLED_8X16);
-					if(esp01s_flag)
+					OLED_ShowString(0, 0, "ESP01S set", OLED_8X16);
+					OLED_ShowString(0, 16, "CONNECT?:", OLED_8X16);
+					if(MQTT_CONNECT_FLAG == 0)
 					{
-						OLED_ShowString(72, 16, "ÊÇ", OLED_8X16);
+						OLED_ShowString(72, 16, "yes", OLED_8X16);
 					}
 					else
 					{
-						OLED_ShowString(72, 16, "·ñ", OLED_8X16);
+						OLED_ShowString(72, 16, "no", OLED_8X16);
 					}
-					OLED_ShowString(0, 32, "ÖØĞÂÁ¬½Ó?", OLED_8X16);
+					OLED_ShowString(0, 32, "reconnect?", OLED_8X16);
 					OLED_ReverseArea(0, Esp01s_y, 128, 16);
 				}
 			}
 		}
 		
-		if(esp01s_flag)
+		if(MQTT_CONNECT_FLAG == 0)
 		{
 			OLED_ShowImage(96, 0, 16, 16, WIFI);
 		}

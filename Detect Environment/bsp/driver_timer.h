@@ -34,7 +34,7 @@
 #define _DRIVER_TIMER_H
 
 #include <stdint.h>
-#include "hardware.h"
+#include "main.h"
 
 /**********************************************************************
  * º¯ÊýÃû³Æ£º udelay

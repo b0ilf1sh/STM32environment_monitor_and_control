@@ -1,7 +1,10 @@
 #ifndef _BUZZER_H_
 #define _BUZZER_H_
 
-#include "hardware.h"
+#include "main.h"
+#include "cmsis_os2.h"
+#include "FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
+#include "task.h" 
 
 #define P    0
 
@@ -32,6 +35,8 @@
 #define M7   81-1
 
 #define Buzzer_Speed   500
+
+extern TIM_HandleTypeDef htim2;
 
 void BUZZER_Init(void);
 void BUZZER_SetVolume(uint8_t Volume);

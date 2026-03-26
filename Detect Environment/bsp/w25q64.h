@@ -1,7 +1,7 @@
 #ifndef _W25Q64_H_
 #define _W25Q64_H_
 
-#include "hardware.h"
+#include "main.h"
 
 #define W25Q64_JEDEC_ID           0x9F
 #define W25Q64_StatusRegister1	  0x05

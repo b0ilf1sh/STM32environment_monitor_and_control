@@ -1,7 +1,11 @@
 #ifndef _COLORLED_H_
 #define	_COLORLED_H_
 
-#include "hardware.h"
+#include "main.h"
+#include "FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
+#include "task.h" 
+
+extern TIM_HandleTypeDef htim3;
 
 void ColorLED_Init(void);
 void ColorLED_SetColor(uint8_t R, uint8_t G, uint8_t B);

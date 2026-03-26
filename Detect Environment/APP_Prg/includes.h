@@ -1,13 +1,28 @@
 #ifndef _INCLUDES_H_
 #define _INCLUDES_H_
 
-#include "hardware.h"
+#include "main.h"
 #include "cmsis_os2.h"
 #include "FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
 #include "task.h" 
 #include "event_groups.h" 
 #include "queue.h"
 #include "semphr.h"
+#include "IR.h"
+#include "DHT11.h"
+#include "BUZZER.h"
+#include "LightSensor.h"
+#include "ColorLED.h"
+#include "OLED.h"
+#include "driver_timer.h"
+#include "GPIO_IRQ.h"
+#include "w25q64.h"
+#include "Motor.h"
+#include "ESP01S.h"
+#include "OTA.h"
+#include "MQTT.h"
+#include "AD.h"
+#include "Battery.h"
 
 #define IRRec_Event_Buzzer        (1<<0)
 #define IRRec_Event_W25Q64        (1<<1)
@@ -34,8 +49,8 @@
 #define LightSensor_Event_ESP01S    (1<<2)
 #define LightSensor_Event_All   (LightSensor_Event_OLED | LightSensor_Event_ColorLED | LightSensor_Event_ESP01S)
 
-#define W25Q64_TEMP_ADDRESS      0x002000    //ÎÂ¶È´æ´¢µØÖ·
-#define W25Q64_VOLUME_ADDRESS    0x003000    //ÒôÁ¿´æ´¢µØÖ·
+#define W25Q64_TEMP_ADDRESS      0x002000    //æ¸©åº¦å­˜å‚¨åœ°å€
+#define W25Q64_VOLUME_ADDRESS    0x003000    //éŸ³é‡å­˜å‚¨åœ°å€
 
 typedef enum{
 	SysMODE_STBY=0,
@@ -49,7 +64,7 @@ typedef struct{
 	uint8_t lightsensor_light;
 }sysdata_t;
 
-//Ìí¼ÓÈ«¾Ö±äÁ¿
+//æ·»åŠ å…¨å±€å˜é‡
 extern TaskHandle_t g_TaskHandleBuzzer;
 extern TaskHandle_t g_TaskHandleOLED;
 extern TaskHandle_t g_TaskHandleColorLED;
@@ -72,11 +87,11 @@ extern SemaphoreHandle_t g_xMutex_Set;
 
 extern sysmode_t System_Mode;
 extern sysdata_t System_Data;
-extern uint8_t esp01s_flag;
+extern uint8_t MQTT_CONNECT_FLAG;
 
-//³õÊ¼»¯ÈÎÎñº¯Êý
+//åˆå§‹åŒ–ä»»åŠ¡å‡½æ•°
 void app_init(void);
-//Ä£¿éÈÎÎñº¯Êý
+//æ¨¡å—ä»»åŠ¡å‡½æ•°
 void task_esp01s(void *params);
 void task_buzzer(void *params);
 void task_lightsensor(void *params);

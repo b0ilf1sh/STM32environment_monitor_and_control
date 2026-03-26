@@ -38,7 +38,7 @@ void task_colorled(void *params)
 			}
 			else
 			{
-				ColorLED_SetColor(0, lum, 0);//正常运行时为绿色
+				ColorLED_SetColor(0, lum, 0);//姝ｅ父杩愯鏃朵负缁胯壊
 				vTaskDelay(10);
 			}
 		}

@@ -1,9 +1,10 @@
 #ifndef _DHT11_H_
 #define	_DHT11_H_
 
-#include "hardware.h"
+#include "main.h"
+#include "driver_timer.h"
 
-#define DHT11_DATA_NUM    5    //´æ´¢ÊıÁ¿
+#define DHT11_DATA_NUM    5    //å­˜å‚¨æ•°æ®ä¸ªæ•°
 
 void DHT11_OFF(void);
 uint8_t DHT11_GetData(uint8_t *humidity, uint8_t *temperature);

@@ -5,7 +5,7 @@ void task_w25q64(void *params)
 	EventBits_t ir_rec_event;
 	EventBits_t esp01s_event;
 	
-	uint8_t temp[3];//ÓÃÀ´´æ´¢Êı¾İµÄÁÙÊ±Êı×é
+	uint8_t temp[3];//ç”¨æ¥å­˜å‚¨æ•°æ®çš„ä¸´æ—¶æ•°ç»„
 	
 	while(1)
 	{

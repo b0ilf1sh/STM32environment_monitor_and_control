@@ -1,7 +1,7 @@
 #ifndef _IR_H_
 #define _IR_H_
 
-#include "hardware.h"
+#include "main.h"
 
 #define IR_POWER		0xA2
 #define IR_MENU			0xE2
@@ -23,6 +23,8 @@
 #define IR_7			0x42
 #define IR_8			0x4A
 #define IR_9			0x52
+
+extern TIM_HandleTypeDef htim1;
 
 void IR_Init(void);
 uint8_t IR_GetData(void);

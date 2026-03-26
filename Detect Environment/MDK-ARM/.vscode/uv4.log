@@ -1,0 +1,5 @@
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Keil5\ARM\ARMCC\Bin'
+Build target 'Detect Environment'
+After Build - User command #1: D:\Keil5\ARM\ARMCC\bin\fromelf --bin -o "Detect Environment\Detect Environment.bin" "Detect Environment\Detect Environment.axf"
+"Detect Environment\Detect Environment.axf" - 0 Error(s), 0 Warning(s).
+Build Time Elapsed:  00:00:03

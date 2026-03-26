@@ -1,7 +1,8 @@
 #ifndef _BATTERY_H_
 #define _BATTERY_H_
 
-#include "hardware.h"
+#include "main.h"
+#include "AD.h"
 
 float Battery_GetVoltage(void);
 

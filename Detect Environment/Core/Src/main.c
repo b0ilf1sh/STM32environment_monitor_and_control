@@ -32,7 +32,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define APP_Start_ADDRESS   0x08008000
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -52,6 +52,7 @@ TIM_HandleTypeDef htim3;
 
 UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
+DMA_HandleTypeDef hdma_usart2_rx;
 
 /* Definitions for defaultTask */
 osThreadId_t defaultTaskHandle;
@@ -93,7 +94,7 @@ void StartDefaultTask(void *argument);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+	__disable_irq();//先禁用全局中断
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -109,7 +110,7 @@ int main(void)
   SystemClock_Config();
 
   /* USER CODE BEGIN SysInit */
-
+ 	SCB->VTOR = APP_Start_ADDRESS;//中断向量表重映射
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
@@ -123,7 +124,13 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
+    
+  EXTI->PR = 0xFFFFFFFF;// 清除所有 EXTI 挂起标志（保险）
+  for(int i=0; i<8; i++)
+  {
+    NVIC->ICPR[i] = 0xFFFFFFFF;// 清除 NVIC 所有挂起中断（彻底解决乱触发）
+  } 
+	__enable_irq();
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -598,7 +605,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : PB10 */
   GPIO_InitStruct.Pin = GPIO_PIN_10;
   GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PB12 */

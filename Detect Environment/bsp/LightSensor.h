@@ -1,7 +1,8 @@
 #ifndef _LIGHTSENSOR_H_
 #define	_LIGHTSENSOR_H_
 
-#include "hardware.h"
+#include "main.h"
+#include "AD.h"
 
 uint8_t LightSensor_GetLight(void);
 

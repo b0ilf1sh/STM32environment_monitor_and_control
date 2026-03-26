@@ -24,7 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "hardware.h"
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +44,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-char text[1024];
+char text[512];
 /* USER CODE END Variables */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,8 +66,8 @@ __weak void configureTimerForRunTimeStats(void)
 
 __weak unsigned long getRunTimeCounterValue(void)
 {
-return 0;
-//	return system_get_ns()/1000;
+  return 0;
+  // return system_get_ns()/1000;
 }
 /* USER CODE END 1 */
 
@@ -83,14 +83,16 @@ void vApplicationIdleHook( void )
    important that vApplicationIdleHook() is permitted to return to its calling
    function, because it is the responsibility of the idle task to clean up
    memory allocated by the kernel to any task that has since been deleted. */
-//	int i;
-//	vTaskList(text);//查看堆栈使用情况
-//	vTaskGetRunTimeStats(text);//查看CPU使用率
-//	for(i=0;i<16;i++)
-//	uart1_sendstring("_");
-//	uart1_sendstring("\r\n");
-//	uart1_sendstring(text);
-//	uart1_sendstring("\r\n");
+	// int i;
+	// // vTaskList(text);//鏌ョ湅鍫嗘爤浣跨敤鎯呭喌
+	// vTaskGetRunTimeStats(text);//鏌ョ湅CPU浣跨敤鐜?
+	// for(i=0;i<16;i++)
+  // {
+  //   printf("_");
+  // }
+	// printf("\r\n");
+	// printf("%s",text);
+	// printf("\r\n");
 }
 /* USER CODE END 2 */
 

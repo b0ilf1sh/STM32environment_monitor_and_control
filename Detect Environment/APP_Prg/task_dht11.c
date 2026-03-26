@@ -6,10 +6,10 @@ void task_dht11(void *params)
 	{
 		if(System_Mode == SysMODE_NORM)
 		{
-			vTaskSuspendAll();//暂停调度
+			vTaskSuspendAll();//鏆傚仠璋冨害
 			DHT11_Run(&System_Data.dht11_hum, &System_Data.dht11_tem);
 			xEventGroupSetBits(g_xEventDHT11, DHT11_Event_All);
-			xTaskResumeAll();//恢复调度
+			xTaskResumeAll();//鎭㈠璋冨害
 		}
 		else
 		{
