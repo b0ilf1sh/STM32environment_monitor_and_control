@@ -42,17 +42,14 @@ void app_init(void)
 	
 	g_xMutex_SystemMode = xSemaphoreCreateMutex();
 	g_xMutex_Set = xSemaphoreCreateMutex();
-	
+
 	//外设初始化
 	OLED_Init();
 	OLED_ShowString(0, 0, "INIT START", OLED_8X16);
 	OLED_Update();
 	mdelay(1000);
 	
-	taskENTER_CRITICAL();
 	DHT11_Init();
-	taskEXIT_CRITICAL();
-	
 	BUZZER_Init();
 	ColorLED_Init();
 	IR_Init();

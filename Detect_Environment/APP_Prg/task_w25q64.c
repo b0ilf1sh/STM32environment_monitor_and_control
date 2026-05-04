@@ -60,6 +60,6 @@ void task_w25q64(void *params)
 			xQueueSend(g_xQueue_W25Q64_to_OLED,temp,0);
 		}
 
-		vTaskDelay(100);
+		vTaskDelay(1000);
 	}
 }

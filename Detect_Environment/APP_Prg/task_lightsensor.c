@@ -16,6 +16,6 @@ void task_lightsensor(void *params)
 			xEventGroupSetBits(g_xEventLightSensor, LightSensor_Event_ColorLED | LightSensor_Event_ESP01S);
 		}
 		
-		vTaskDelay(500);
+		vTaskDelay(1000);
 	}
 }

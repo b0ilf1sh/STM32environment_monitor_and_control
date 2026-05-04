@@ -1,16 +1,13 @@
 #ifndef _OTA_H__
 #define _OTA_H__
 
-#include "main.h"
-#include "ESP01S.h"
+#include "includes.h"
 #include <stdlib.h>
-#include "W25Q64.h"
-#include "OLED.h"
 
 #define OTA_NEW_APP_BUFF_LEN   1280  //新程序接收缓存大小
 
-// #define OTA_CHECK_UPDATE_TIME   3600000   //每隔一小时检查一次更新
-#define OTA_CHECK_UPDATE_TIME   120000   //每隔两分钟检查一次更新
+#define OTA_CHECK_UPDATE_TIME   3600000   //每隔一小时检查一次更新
+// #define OTA_CHECK_UPDATE_TIME   120000   //每隔两分钟检查一次更新
 #define OTA_APP_W25Q64_Start_Address 0x010000 //APP在W25Q64中的首地址
 #define OTA_APP_W25Q64_Sector_Size   0x1000  //W25Q64扇区大小
 #define OTA_APP_W25Q64_SECTOR_NUM    32    //需要擦除的扇区数量
@@ -30,6 +27,7 @@ typedef enum{
     OTA_INIT,
     OTA_REPORT_VERSION,
     OTA_CHECK_UPDATE,
+    OTA_WAIT_CONFIRM,
     OTA_APP_DOWN,
     OTA_APP_CHECK,
     OTA_RESET,

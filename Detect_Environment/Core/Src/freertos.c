@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
+#include "driver_timer.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +45,8 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-char text[200];
+char text[150];
+extern TIM_HandleTypeDef htim4;
 /* USER CODE END Variables */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -59,7 +61,7 @@ void vApplicationIdleHook(void);
 
 /* USER CODE BEGIN 1 */
 /* Functions needed when configGENERATE_RUN_TIME_STATS is on */
-__weak void configureTimerForRunTimeStats(void)
+__weak void configureTimerForRunTimeStats(void) 
 {
 
 }
@@ -67,7 +69,6 @@ __weak void configureTimerForRunTimeStats(void)
 __weak unsigned long getRunTimeCounterValue(void)
 {
   return 0;
-  // return system_get_ns()/1000;
 }
 /* USER CODE END 1 */
 
@@ -84,8 +85,8 @@ void vApplicationIdleHook( void )
    function, because it is the responsibility of the idle task to clean up
    memory allocated by the kernel to any task that has since been deleted. */
 	// int i;
-	// vTaskList(text);//查看堆栈使用情况
-	// // vTaskGetRunTimeStats(text);//查看CPU使用情况
+	// // // vTaskList(text);//查看堆栈使用情况
+	// vTaskGetRunTimeStats(text);//查看CPU使用情况
 	// for(i=0;i<16;i++)
   // {
   //   printf("_");
@@ -95,6 +96,23 @@ void vApplicationIdleHook( void )
 	// printf("\r\n");
 }
 /* USER CODE END 2 */
+
+/* USER CODE BEGIN PREPOSTSLEEP */
+__weak void PreSleepProcessing(uint32_t *ulExpectedIdleTime)//进入低功耗前的操作
+{
+  // HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_11);
+/* place for user code */
+  __HAL_TIM_DISABLE_IT(&htim4, TIM_IT_UPDATE);
+  __HAL_TIM_DISABLE(&htim4);
+}
+
+__weak void PostSleepProcessing(uint32_t *ulExpectedIdleTime)//退出出低功耗后的操作
+{
+/* place for user code */
+  __HAL_TIM_ENABLE(&htim4);
+  __HAL_TIM_ENABLE_IT(&htim4, TIM_IT_UPDATE);
+}
+/* USER CODE END PREPOSTSLEEP */
 
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */

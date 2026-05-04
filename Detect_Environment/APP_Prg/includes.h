@@ -35,6 +35,10 @@
 #define IRRec_Event_OLED_ALL     (IRRec_Event_OLED_SetStart | IRRec_Event_OLED_SetEnd \
 							    | IRRec_Event_OLED_SetPREVIOUS | IRRec_Event_OLED_SetNEXT \
 							    | IRRec_Event_OLED_SetSetPlus | IRRec_Event_OLED_SetSub)
+#define IRRec_Event_ESP01S_PREVIOUS   (1<<8)
+#define IRRec_Event_ESP01S_NEXT       (1<<9)
+#define IRRec_Event_ESP01S_COFIRM     (1<<10)
+#define IRRec_Event_ESP01S_ALL    (IRRec_Event_ESP01S_PREVIOUS | IRRec_Event_ESP01S_NEXT | IRRec_Event_ESP01S_COFIRM)
 
 #define ESP01S_Event_Buzzer       (1<<0)
 #define ESP01S_Event_W25Q64       (1<<1)
@@ -56,6 +60,7 @@ typedef enum{
 	SysMODE_STBY=0,
 	SysMODE_NORM=1,
 	SysMODE_SET=2,
+	SysMODE_UPDATE=3,
 }sysmode_t;
 
 typedef struct{

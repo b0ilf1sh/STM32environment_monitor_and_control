@@ -1,6 +1,10 @@
 #ifndef _DHT11_H_
 #define	_DHT11_H_
 
+#include "FreeRTOS.h"                   // ARM.FreeRTOS::RTOS:Core
+#include "task.h" 
+#include <stdio.h>
+#include <string.h>
 #include "main.h"
 #include "driver_timer.h"
 

@@ -1,7 +1,7 @@
 Dependencies for Project 'Detect_Environment', Target 'Detect_Environment': (DO NOT MODIFY !)
-F (startup_stm32f103xb.s)(0x69C682EE)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ../Core/Inc-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o "detect environment\startup_stm32f103xb.o" --depend "detect environment\startup_stm32f103xb.d")
-F (../Core/Src/main.c)(0x69C6725C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\main.o" --omf_browse "detect environment\main.crf" --depend "detect environment\main.d")
-I (../Core/Inc/main.h)(0x6996B900)
+F (startup_stm32f103xb.s)(0x69F5A886)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I ../Core/Inc-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include--pd "__UVISION_VERSION SETA 524" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list startup_stm32f103xb.lst --xref -o "detect environment\startup_stm32f103xb.o" --depend "detect environment\startup_stm32f103xb.d")
+F (../Core/Src/main.c)(0x69F7FCCA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\main.o" --omf_browse "detect environment\main.crf" --depend "detect environment\main.d")
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -35,23 +35,25 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201)
-I (../APP_Prg/includes.h)(0x69BF9B37)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -61,18 +63,16 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (../Core/Src/freertos.c)(0x69C6839F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\freertos.o" --omf_browse "detect environment\freertos.crf" --depend "detect environment\freertos.d")
+F (../Core/Src/freertos.c)(0x69F7F883)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\freertos.o" --omf_browse "detect environment\freertos.crf" --depend "detect environment\freertos.d")
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -80,7 +80,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -110,8 +110,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../bsp/driver_timer.h)(0x69BE4104)
 F (../Core/Src/stm32f1xx_it.c)(0x6996B900)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\stm32f1xx_it.o" --omf_browse "detect environment\stm32f1xx_it.crf" --depend "detect environment\stm32f1xx_it.d")
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -144,7 +145,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_it.h)(0x6996B900)
 F (../Core/Src/stm32f1xx_hal_msp.c)(0x69BE340F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\stm32f1xx_hal_msp.o" --omf_browse "detect environment\stm32f1xx_hal_msp.crf" --depend "detect environment\stm32f1xx_hal_msp.d")
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -768,7 +769,7 @@ F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x69303201)(--c99 -c -
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -782,7 +783,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -797,7 +798,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -810,7 +811,7 @@ I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -824,7 +825,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -839,7 +840,7 @@ I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -855,7 +856,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -873,7 +874,7 @@ I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69303201)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -890,7 +891,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -902,7 +903,7 @@ F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c)(0x69
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
 I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -912,7 +913,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
 F (..\bsp\AD.c)(0x69A2D380)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\ad.o" --omf_browse "detect environment\ad.crf" --depend "detect environment\ad.d")
 I (..\bsp\AD.h)(0x69BE4014)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -944,9 +945,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 F (..\bsp\AD.h)(0x69BE4014)()
-F (..\bsp\BUZZER.c)(0x69A426AF)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\buzzer.o" --omf_browse "detect environment\buzzer.crf" --depend "detect environment\buzzer.d")
-I (..\bsp\BUZZER.h)(0x69BE435E)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\bsp\BUZZER.c)(0x69F5E92F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\buzzer.o" --omf_browse "detect environment\buzzer.crf" --depend "detect environment\buzzer.d")
+I (..\bsp\BUZZER.h)(0x69F5E92F)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -979,7 +980,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -987,10 +988,10 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
-F (..\bsp\BUZZER.h)(0x69BE435E)()
+F (..\bsp\BUZZER.h)(0x69F5E92F)()
 F (..\bsp\ColorLED.c)(0x69A426AF)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\colorled.o" --omf_browse "detect environment\colorled.crf" --depend "detect environment\colorled.d")
 I (..\bsp\ColorLED.h)(0x69C1034B)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1022,7 +1023,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1031,9 +1032,22 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
 F (..\bsp\ColorLED.h)(0x69C1034B)()
-F (..\bsp\DHT11.c)(0x69C0FC13)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\dht11.o" --omf_browse "detect environment\dht11.crf" --depend "detect environment\dht11.d")
-I (..\bsp\DHT11.h)(0x69C0FB21)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\bsp\DHT11.c)(0x69E0A9D8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\dht11.o" --omf_browse "detect environment\dht11.crf" --depend "detect environment\dht11.d")
+I (..\bsp\DHT11.h)(0x69E0A8F3)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
+I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1041,13 +1055,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6930320A)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6930320A)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x6930320A)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x69303201)
-I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
 I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69303201)
 I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69303201)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69303201)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6930320A)
-I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6930320A)
@@ -1065,11 +1077,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (..\bsp\driver_timer.h)(0x69BE4104)
-F (..\bsp\DHT11.h)(0x69C0FB21)()
-F (..\bsp\driver_timer.c)(0x6996B901)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\driver_timer.o" --omf_browse "detect environment\driver_timer.crf" --depend "detect environment\driver_timer.d")
+F (..\bsp\DHT11.h)(0x69E0A8F3)()
+F (..\bsp\driver_timer.c)(0x69F572EE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\driver_timer.o" --omf_browse "detect environment\driver_timer.crf" --depend "detect environment\driver_timer.d")
 I (..\bsp\driver_timer.h)(0x69BE4104)
 I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1102,7 +1114,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 F (..\bsp\driver_timer.h)(0x69BE4104)()
 F (..\bsp\GPIO_IRQ.c)(0x6996B901)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\gpio_irq.o" --omf_browse "detect environment\gpio_irq.crf" --depend "detect environment\gpio_irq.d")
 I (..\bsp\GPIO_IRQ.h)(0x69BE4169)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1133,11 +1145,46 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
-I (..\bsp\IR.h)(0x69BE4395)
+I (..\bsp\IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
+I (../bsp/IR.h)(0x69F49A05)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
+I (../bsp/driver_timer.h)(0x69BE4104)
+I (../bsp/BUZZER.h)(0x69F5E92F)
+I (../bsp/LightSensor.h)(0x69BE4195)
+I (../bsp/AD.h)(0x69BE4014)
+I (../bsp/ColorLED.h)(0x69C1034B)
+I (../bsp/OLED.h)(0x6996BACC)
+I (../bsp/OLED_Data.h)(0x69A2E840)
+I (../bsp/GPIO_IRQ.h)(0x69BE4169)
+I (../bsp/w25q64.h)(0x69BE4235)
+I (../bsp/Motor.h)(0x69BE41C2)
+I (../bsp/ESP01S.h)(0x69C6618C)
+I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (../bsp/OTA.h)(0x69DF8CD9)
+I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
+I (../bsp/MQTT.h)(0x69C4D9C4)
+I (../bsp/Battery.h)(0x69BE4252)
 F (..\bsp\GPIO_IRQ.h)(0x69BE4169)()
-F (..\bsp\IR.c)(0x69C0FD1C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\ir.o" --omf_browse "detect environment\ir.crf" --depend "detect environment\ir.d")
-I (..\bsp\IR.h)(0x69BE4395)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\bsp\IR.c)(0x69F4A5C7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\ir.o" --omf_browse "detect environment\ir.crf" --depend "detect environment\ir.d")
+I (..\bsp\IR.h)(0x69F49A05)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1168,10 +1215,45 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
-F (..\bsp\IR.h)(0x69BE4395)()
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
+I (../bsp/IR.h)(0x69F49A05)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
+I (../bsp/driver_timer.h)(0x69BE4104)
+I (../bsp/BUZZER.h)(0x69F5E92F)
+I (../bsp/LightSensor.h)(0x69BE4195)
+I (../bsp/AD.h)(0x69BE4014)
+I (../bsp/ColorLED.h)(0x69C1034B)
+I (../bsp/OLED.h)(0x6996BACC)
+I (../bsp/OLED_Data.h)(0x69A2E840)
+I (../bsp/GPIO_IRQ.h)(0x69BE4169)
+I (../bsp/w25q64.h)(0x69BE4235)
+I (../bsp/Motor.h)(0x69BE41C2)
+I (../bsp/ESP01S.h)(0x69C6618C)
+I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (../bsp/OTA.h)(0x69DF8CD9)
+I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
+I (../bsp/MQTT.h)(0x69C4D9C4)
+I (../bsp/Battery.h)(0x69BE4252)
+F (..\bsp\IR.h)(0x69F49A05)()
 F (..\bsp\LightSensor.c)(0x69A2E012)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\lightsensor.o" --omf_browse "detect environment\lightsensor.crf" --depend "detect environment\lightsensor.d")
 I (..\bsp\LightSensor.h)(0x69BE4195)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1204,9 +1286,9 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (..\bsp\AD.h)(0x69BE4014)
 F (..\bsp\LightSensor.h)(0x69BE4195)()
-F (..\bsp\Motor.c)(0x69C0FD78)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\motor.o" --omf_browse "detect environment\motor.crf" --depend "detect environment\motor.d")
+F (..\bsp\Motor.c)(0x69F354F9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\motor.o" --omf_browse "detect environment\motor.crf" --depend "detect environment\motor.d")
 I (..\bsp\Motor.h)(0x69BE41C2)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1240,7 +1322,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 F (..\bsp\Motor.h)(0x69BE41C2)()
 F (..\bsp\music.c)(0x6996B901)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\music.o" --omf_browse "detect environment\music.crf" --depend "detect environment\music.d")
 I (..\bsp\music.h)(0x69BE437F)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1271,10 +1353,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
-I (..\bsp\BUZZER.h)(0x69BE435E)
+I (..\bsp\BUZZER.h)(0x69F5E92F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1285,7 +1367,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
 F (..\bsp\music.h)(0x69BE437F)()
 F (..\bsp\OLED.c)(0x6996BBC3)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\oled.o" --omf_browse "detect environment\oled.crf" --depend "detect environment\oled.d")
 I (..\bsp\OLED.h)(0x6996BACC)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1328,7 +1410,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
 F (..\bsp\OLED_Data.h)(0x69A2E840)()
 F (..\bsp\w25q64.c)(0x69B7A7A8)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\w25q64.o" --omf_browse "detect environment\w25q64.crf" --depend "detect environment\w25q64.d")
 I (..\bsp\w25q64.h)(0x69BE4235)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1362,7 +1444,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 F (..\bsp\w25q64.h)(0x69BE4235)()
 F (..\bsp\Battery.c)(0x69A4272A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\battery.o" --omf_browse "detect environment\battery.crf" --depend "detect environment\battery.d")
 I (..\bsp\Battery.h)(0x69BE4252)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1397,7 +1479,7 @@ I (..\bsp\AD.h)(0x69BE4014)
 F (..\bsp\Battery.h)(0x69BE4252)()
 F (..\bsp\MQTT.c)(0x69C12546)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\mqtt.o" --omf_browse "detect environment\mqtt.crf" --depend "detect environment\mqtt.d")
 I (..\bsp\MQTT.h)(0x69C4D9C4)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1433,7 +1515,7 @@ I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (..\bsp\ESP01S.h)(0x69C6618C)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1445,7 +1527,7 @@ I (..\bsp\driver_timer.h)(0x69BE4104)
 F (..\bsp\MQTT.h)(0x69C4D9C4)()
 F (..\bsp\ESP01S.c)(0x69C6618C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\esp01s.o" --omf_browse "detect environment\esp01s.crf" --depend "detect environment\esp01s.d")
 I (..\bsp\ESP01S.h)(0x69C6618C)
-I (../Core/Inc/main.h)(0x6996B900)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1480,7 +1562,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1490,62 +1572,10 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
 I (..\bsp\driver_timer.h)(0x69BE4104)
 F (..\bsp\ESP01S.h)(0x69C6618C)()
-F (..\bsp\OTA.c)(0x69C66278)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\ota.o" --omf_browse "detect environment\ota.crf" --depend "detect environment\ota.d")
-I (..\bsp\OTA.h)(0x69C64DC0)
-I (../Core/Inc/main.h)(0x6996B900)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
-I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6930320A)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6930320A)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x6930320A)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x69303201)
-I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
-I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69303201)
-I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69303201)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69303201)
-I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6930320A)
-I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
-I (..\bsp\ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
-I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x69303201)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
-I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
-I (..\bsp\driver_timer.h)(0x69BE4104)
-I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
-I (..\bsp\W25Q64.h)(0x69BE4235)
-I (..\bsp\OLED.h)(0x6996BACC)
-I (..\bsp\OLED_Data.h)(0x69A2E840)
-F (..\bsp\OTA.h)(0x69C64DC0)()
-F (..\APP_Prg\includes.h)(0x69BF9B37)()
-F (..\APP_Prg\task_appinit.c)(0x69C6816A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_appinit.o" --omf_browse "detect environment\task_appinit.crf" --depend "detect environment\task_appinit.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\bsp\OTA.c)(0x69F5B74A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\ota.o" --omf_browse "detect environment\ota.crf" --depend "detect environment\ota.d")
+I (..\bsp\OTA.h)(0x69DF8CD9)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1578,7 +1608,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1590,10 +1620,12 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -1603,16 +1635,84 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (../bsp/OTA.h)(0x69DF8CD9)
+I (../bsp/MQTT.h)(0x69C4D9C4)
+I (../bsp/Battery.h)(0x69BE4252)
+I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
+F (..\bsp\OTA.h)(0x69DF8CD9)()
+F (..\APP_Prg\includes.h)(0x69F4A5C7)()
+F (..\APP_Prg\task_appinit.c)(0x69F4A5C7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_appinit.o" --omf_browse "detect environment\task_appinit.crf" --depend "detect environment\task_appinit.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
+I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6930320A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6930320A)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h)(0x6930320A)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x69303201)
+I (D:\Keil5\ARM\ARMCC\include\stdint.h)(0x588B8344)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x69303201)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x69303201)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x69303201)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6930320A)
+I (D:\Keil5\ARM\ARMCC\include\stddef.h)(0x588B8344)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
 I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/driver_timer.h)(0x69BE4104)
+I (../bsp/BUZZER.h)(0x69F5E92F)
+I (../bsp/LightSensor.h)(0x69BE4195)
+I (../bsp/AD.h)(0x69BE4014)
+I (../bsp/ColorLED.h)(0x69C1034B)
+I (../bsp/OLED.h)(0x6996BACC)
+I (../bsp/OLED_Data.h)(0x69A2E840)
+I (../bsp/GPIO_IRQ.h)(0x69BE4169)
+I (../bsp/w25q64.h)(0x69BE4235)
+I (../bsp/Motor.h)(0x69BE41C2)
+I (../bsp/ESP01S.h)(0x69C6618C)
+I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (..\APP_Prg\task_buzzer.c)(0x69C67B51)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_buzzer.o" --omf_browse "detect environment\task_buzzer.crf" --depend "detect environment\task_buzzer.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\APP_Prg\task_buzzer.c)(0x69F5BBD2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_buzzer.o" --omf_browse "detect environment\task_buzzer.crf" --depend "detect environment\task_buzzer.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1645,7 +1745,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1657,10 +1757,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -1670,16 +1773,14 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (..\APP_Prg\task_colorled.c)(0x69C67BD9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_colorled.o" --omf_browse "detect environment\task_colorled.crf" --depend "detect environment\task_colorled.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\APP_Prg\task_colorled.c)(0x69F49492)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_colorled.o" --omf_browse "detect environment\task_colorled.crf" --depend "detect environment\task_colorled.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1712,7 +1813,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1724,10 +1825,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -1737,16 +1841,14 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (..\APP_Prg\task_dht11.c)(0x69C684AA)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_dht11.o" --omf_browse "detect environment\task_dht11.crf" --depend "detect environment\task_dht11.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\APP_Prg\task_dht11.c)(0x69DE290D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_dht11.o" --omf_browse "detect environment\task_dht11.crf" --depend "detect environment\task_dht11.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1779,7 +1881,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1791,10 +1893,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -1804,16 +1909,14 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (..\APP_Prg\task_esp01s.c)(0x69C67D24)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_esp01s.o" --omf_browse "detect environment\task_esp01s.crf" --depend "detect environment\task_esp01s.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\APP_Prg\task_esp01s.c)(0x69F5B816)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_esp01s.o" --omf_browse "detect environment\task_esp01s.crf" --depend "detect environment\task_esp01s.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1846,7 +1949,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1858,10 +1961,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -1871,16 +1977,14 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (..\APP_Prg\task_ir_rec.c)(0x69C67D8F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_ir_rec.o" --omf_browse "detect environment\task_ir_rec.crf" --depend "detect environment\task_ir_rec.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\APP_Prg\task_ir_rec.c)(0x69F4A5C7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_ir_rec.o" --omf_browse "detect environment\task_ir_rec.crf" --depend "detect environment\task_ir_rec.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1913,7 +2017,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1925,10 +2029,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -1938,16 +2045,14 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (..\APP_Prg\task_lightsensor.c)(0x69C67DEF)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_lightsensor.o" --omf_browse "detect environment\task_lightsensor.crf" --depend "detect environment\task_lightsensor.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\APP_Prg\task_lightsensor.c)(0x69F49138)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_lightsensor.o" --omf_browse "detect environment\task_lightsensor.crf" --depend "detect environment\task_lightsensor.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -1980,7 +2085,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -1992,10 +2097,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -2005,16 +2113,14 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
 F (..\APP_Prg\task_motor.c)(0x69C67E4A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_motor.o" --omf_browse "detect environment\task_motor.crf" --depend "detect environment\task_motor.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -2047,7 +2153,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -2059,10 +2165,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -2072,16 +2181,14 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (..\APP_Prg\task_oled.c)(0x69C67EC9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_oled.o" --omf_browse "detect environment\task_oled.crf" --depend "detect environment\task_oled.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\APP_Prg\task_oled.c)(0x69DF4C20)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_oled.o" --omf_browse "detect environment\task_oled.crf" --depend "detect environment\task_oled.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -2114,7 +2221,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -2126,10 +2233,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -2139,16 +2249,14 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)
-F (..\APP_Prg\task_w25q64.c)(0x69C67F2E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_w25q64.o" --omf_browse "detect environment\task_w25q64.crf" --depend "detect environment\task_w25q64.d")
-I (..\APP_Prg\includes.h)(0x69BF9B37)
-I (../Core/Inc/main.h)(0x6996B900)
+F (..\APP_Prg\task_w25q64.c)(0x69F49472)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Core/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../APP_Prg -I ../bsp-I.\RTE\_Detect_Environment-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.4.0\Device\Include-D__UVISION_VERSION="524" -D_RTE_ -DSTM32F10X_MD -DUSE_HAL_DRIVER -DSTM32F103xB-o "detect environment\task_w25q64.o" --omf_browse "detect environment\task_w25q64.crf" --depend "detect environment\task_w25q64.d")
+I (..\APP_Prg\includes.h)(0x69F4A5C7)
+I (../Core/Inc/main.h)(0x69F55352)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6930320A)
 I (../Core/Inc/stm32f1xx_hal_conf.h)(0x69A2D10F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6930320A)
@@ -2181,7 +2289,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6930320A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6930320A)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x69303201)
-I (../Core/Inc/FreeRTOSConfig.h)(0x69C682EA)
+I (../Core/Inc/FreeRTOSConfig.h)(0x69F5B92E)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x69303201)
@@ -2193,10 +2301,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x69303201
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x69303201)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x69303201)
-I (../bsp/IR.h)(0x69BE4395)
-I (../bsp/DHT11.h)(0x69C0FB21)
+I (../bsp/IR.h)(0x69F49A05)
+I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
+I (../APP_Prg/includes.h)(0x69F4A5C7)
+I (../bsp/DHT11.h)(0x69E0A8F3)
+I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 I (../bsp/driver_timer.h)(0x69BE4104)
-I (../bsp/BUZZER.h)(0x69BE435E)
+I (../bsp/BUZZER.h)(0x69F5E92F)
 I (../bsp/LightSensor.h)(0x69BE4195)
 I (../bsp/AD.h)(0x69BE4014)
 I (../bsp/ColorLED.h)(0x69C1034B)
@@ -2206,10 +2317,8 @@ I (../bsp/GPIO_IRQ.h)(0x69BE4169)
 I (../bsp/w25q64.h)(0x69BE4235)
 I (../bsp/Motor.h)(0x69BE41C2)
 I (../bsp/ESP01S.h)(0x69C6618C)
-I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\stdarg.h)(0x588B8344)
-I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
-I (../bsp/OTA.h)(0x69C64DC0)
+I (../bsp/OTA.h)(0x69DF8CD9)
 I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (../bsp/MQTT.h)(0x69C4D9C4)
 I (../bsp/Battery.h)(0x69BE4252)

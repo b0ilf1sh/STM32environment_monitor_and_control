@@ -39,18 +39,23 @@ void task_colorled(void *params)
 			else
 			{
 				ColorLED_SetColor(0, lum, 0);//正常运行时为绿色
-				vTaskDelay(10);
+				vTaskDelay(1000);
 			}
 		}
 		else if(System_Mode == SysMODE_SET)
 		{
 			ColorLED_SetColor(lum, lum, 0);
-			vTaskDelay(10);
+			vTaskDelay(1000);
 		}
-		else
+		else if(System_Mode == SysMODE_STBY)
 		{
 			ColorLED_SetColor(0, 0, lum);
-			vTaskDelay(10);
+			vTaskDelay(1000);
+		}
+		else//升级模式
+		{
+			ColorLED_SetColor(lum, 0, lum);
+			vTaskDelay(1000);
 		}
 	}
 }

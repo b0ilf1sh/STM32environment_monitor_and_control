@@ -10,8 +10,9 @@ void task_buzzer(void *params)
 	
 	while(1)
 	{
+
 		xQueueReceive(g_xQueue_W25Q64_to_Buzzer,volumn,0);
-		
+	
 		ir_rec_event = xEventGroupWaitBits(g_xEventIR_Rec, IRRec_Event_Buzzer, pdTRUE, pdTRUE, 0);
 		esp01s_event = xEventGroupWaitBits(g_xEventESP01S, ESP01S_Event_Buzzer, pdTRUE, pdTRUE, 0);
 		
@@ -30,8 +31,22 @@ void task_buzzer(void *params)
 					Buzzer_HintVoice(volumn[1]);
 				}
 				
-				vTaskDelay(10);
+				vTaskDelay(500);
 			}
+		}
+		else if(System_Mode == SysMODE_UPDATE)
+		{
+			if((ir_rec_event & IRRec_Event_Buzzer))
+			{
+				ir_rec_event=0;
+			}
+
+			if((esp01s_event & ESP01S_Event_Buzzer))
+			{
+				esp01s_event=0;
+			}
+
+			vTaskDelay(1000);
 		}
 		else
 		{
@@ -40,7 +55,7 @@ void task_buzzer(void *params)
 				Buzzer_HintVoice(volumn[1]);
 			}
 			
-			vTaskDelay(10);
+			vTaskDelay(500);
 		}
 	}
 }

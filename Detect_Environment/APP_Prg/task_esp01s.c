@@ -28,23 +28,26 @@ void task_esp01s(void *params)
 
 			if(MQTT_CONNECT_FLAG == 0)//连接上了服务器
 			{
-				xSemaphoreTake(g_xMutex_SystemMode, portMAX_DELAY);
-			
-				if(MQTT_GET_DATA(APP_MODE_Get, &esp01s_mode))
+				if(System_Mode != SysMODE_UPDATE)
 				{
-					if(System_Mode != esp01s_mode)
+					xSemaphoreTake(g_xMutex_SystemMode, portMAX_DELAY);
+			
+					if(MQTT_GET_DATA(APP_MODE_Get, &esp01s_mode))
 					{
-						xEventGroupSetBits(g_xEventESP01S, ESP01S_Event_Buzzer);
-						
-						System_Mode = esp01s_mode;
-						if(esp01s_mode == SysMODE_SET)
+						if(System_Mode != esp01s_mode)
 						{
-							xEventGroupSetBits(g_xEventESP01S, ESP01S_Event_W25Q64);
+							xEventGroupSetBits(g_xEventESP01S, ESP01S_Event_Buzzer);
+							
+							System_Mode = esp01s_mode;
+							if(esp01s_mode == SysMODE_SET)
+							{
+								xEventGroupSetBits(g_xEventESP01S, ESP01S_Event_W25Q64);
+							}
 						}
 					}
-				}
 
-				xSemaphoreGive(g_xMutex_SystemMode);
+					xSemaphoreGive(g_xMutex_SystemMode);
+				}
 				
 				lightsensor_event = xEventGroupWaitBits(g_xEventLightSensor, LightSensor_Event_ESP01S, pdTRUE, pdTRUE, 0);
 				if(lightsensor_event & LightSensor_Event_ESP01S)
@@ -111,7 +114,7 @@ void task_esp01s(void *params)
 					MQTT_SEND_DATA(APP_MODE_Send, System_Mode);
 				}	
 			}
-			else//断开MQTT连接
+			else//没有连接上服务器
 			{
 				if(connect_time == 0)//第一次重连
 				{
@@ -148,12 +151,11 @@ void task_esp01s(void *params)
 						}
 					}
 				}
-				
 			}
-		
-			vTaskDelay(1000);
 		}
 
 		OTA_Run();//不断执行OTA程序
+
+		vTaskDelay(1000);
 	}
 }

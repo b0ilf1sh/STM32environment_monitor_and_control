@@ -47,7 +47,10 @@ detect environment\task_colorled.o: ../Middlewares/Third_Party/FreeRTOS/Source/i
 detect environment\task_colorled.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 detect environment\task_colorled.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 detect environment\task_colorled.o: ../bsp/IR.h
+detect environment\task_colorled.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+detect environment\task_colorled.o: ../APP_Prg/includes.h
 detect environment\task_colorled.o: ../bsp/DHT11.h
+detect environment\task_colorled.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 detect environment\task_colorled.o: ../bsp/driver_timer.h
 detect environment\task_colorled.o: ../bsp/BUZZER.h
 detect environment\task_colorled.o: ../bsp/LightSensor.h
@@ -59,9 +62,7 @@ detect environment\task_colorled.o: ../bsp/GPIO_IRQ.h
 detect environment\task_colorled.o: ../bsp/w25q64.h
 detect environment\task_colorled.o: ../bsp/Motor.h
 detect environment\task_colorled.o: ../bsp/ESP01S.h
-detect environment\task_colorled.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 detect environment\task_colorled.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
-detect environment\task_colorled.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 detect environment\task_colorled.o: ../bsp/OTA.h
 detect environment\task_colorled.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 detect environment\task_colorled.o: ../bsp/MQTT.h

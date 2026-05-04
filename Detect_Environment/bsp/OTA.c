@@ -2,10 +2,10 @@
 
 OTA_STATE_t OTA_State=OTA_INIT;
 //s为单片机软件版本，需要修改，f为模块版本，无需修改
-int16_t mcu_version_integer=0;//单片机版本的整数部分
-int16_t mcu_version_decimals=0;//单片机版本小数部分
-int16_t target_version_integer=0;//获得目标版本的整数部分
-int16_t target_version_decimals=0;//目标版本小数部分
+uint16_t mcu_version_integer=0;//单片机版本的整数部分
+uint16_t mcu_version_decimals=0;//单片机版本小数部分
+uint16_t target_version_integer=0;//获得目标版本的整数部分
+uint16_t target_version_decimals=0;//目标版本小数部分
 uint32_t tid=0;//获得用于更新的tid
 uint32_t target_version_size=0;//目标版本文件大小
 uint32_t APP_RealGet_Size=0;//实际接收到的大小
@@ -13,6 +13,8 @@ uint8_t update_status=0;//升级状态
 uint64_t OTA_LastTime=0;
 uint8_t OTA_NEW_APP_BUFF[OTA_NEW_APP_BUFF_LEN]={0};
 uint8_t OTA_UPDATE_STATE=0;//是否需要升级标志位
+sysmode_t temp_mode=SysMODE_STBY;//用来记录切完到更新模式前的模式
+uint8_t OTA_ERR_FLAG=0;//升级错误标志位
 
 //与服务器建立TCP连接,并开启透传
 uint8_t OTA_TCP_CONNECT(void)
@@ -185,13 +187,7 @@ uint8_t OTA_GetNeedData(void)
                     data = strstr((char *)ESP01S_READ_BUFF, "target");//版本信息
                     if(data != NULL)
                     {
-                        target_version_integer = atoi((char *)data+10);
-                        target_version_decimals = atoi((char *)data+12);
-                        if(target_version_integer<0 || target_version_decimals<0)
-                        {
-                            printf("GET VERSION ERROR\r\n");
-                            return 0;
-                        }
+                        sscanf((char *)data, "target\":\"V%hu.%hu\"", &target_version_integer, &target_version_decimals);
                     }
 
                     data = strstr((char *)ESP01S_READ_BUFF, "tid");//tid信息
@@ -254,6 +250,56 @@ uint8_t OTA_CheckUpdate(void)
     return OTA_GetNeedData();
 }
 
+//用户确认更新
+void OTA_UserConfirm(void)
+{
+	static uint8_t confirm_flag=0;//用户确认升级标志位
+    static EventBits_t confirm_bits=0;
+
+    //OLED显示部分
+    OLED_Clear();
+    OLED_ShowString(0, 0, "update?", OLED_8X16);
+    OLED_ShowString(0, 48, "Y", OLED_8X16);
+    OLED_ShowString(119, 48, "N", OLED_8X16);
+    if(confirm_flag==0)
+    {
+        OLED_ReverseArea(0, 48, 8, 16);
+    }
+    else if(confirm_flag==1)
+    {
+        OLED_ReverseArea(119, 48, 8, 16);
+    }
+    OLED_Update();
+
+    //等待红外遥控事件组
+    confirm_bits = xEventGroupWaitBits(g_xEventIR_Rec, IRRec_Event_ESP01S_ALL, pdTRUE, pdFALSE, 0);
+    if(confirm_bits & IRRec_Event_ESP01S_PREVIOUS)
+    {
+        confirm_flag=0;//用户选择了Y
+    }
+    else if(confirm_bits & IRRec_Event_ESP01S_NEXT)
+    {
+        confirm_flag=1;//用户选择了N
+    }
+    else if(confirm_bits & IRRec_Event_ESP01S_COFIRM)
+    {
+        if(confirm_flag==0)//用户确认更新
+        {
+            OTA_UPDATE_STATE = 1;//需要下载
+            OTA_State = OTA_APP_DOWN;
+        }
+        else//用户取消更新
+        {
+			OTA_ERR_FLAG=1;
+            OTA_State = OTA_FINISH;
+        }
+        OLED_Clear();
+        OLED_Update();
+    }
+
+    vTaskDelay(100);
+}
+
 //擦除W25Q64中存储APP的区域（BLOCK1和BLOCK2，共128KB）
 void OTA_EraseAppBlock(void)
 {
@@ -285,7 +331,6 @@ uint8_t OTA_DOWNLOAD_NEW_APP(void)
             printf("i=%d\r\n",i);//调试信息
 
             //OLED显示进度
-            OLED_Clear();
             uint8_t percent=0;
             if(i!=(target_version_size/OTA_NEW_APP_SIZE)-1)
             {
@@ -356,7 +401,6 @@ uint8_t OTA_DOWNLOAD_NEW_APP(void)
             printf("i=%d\r\n",i);//调试信息
 
             //OLED显示进度
-            OLED_Clear();
             uint8_t percent=0;
             if(i!=(target_version_size/OTA_NEW_APP_SIZE))
             {
@@ -558,6 +602,7 @@ void OTA_Run(void)
                 ESP01S_REC_BUFF_FLAG = 0;//使用缓冲区接收数据
                 OTA_State = OTA_INIT;
             }
+
             break;
         case OTA_INIT:    //先进行初始化，连接到onenet
             for(i=0;i<3;i++)
@@ -598,8 +643,10 @@ void OTA_Run(void)
                 if(CheckUpdate_State==1)
                 {
                     printf("OTA CHECK UPDATE OK\r\n");
-                    OTA_UPDATE_STATE = 1;//需要下载
-                    OTA_State = OTA_APP_DOWN;//跳转到下载状态
+                    temp_mode = System_Mode;//记住之前的模式
+                    System_Mode = SysMODE_UPDATE;//跳转到更新模式
+                    OTA_State = OTA_WAIT_CONFIRM;//跳转到用户确认状态
+                    // OTA_State = OTA_APP_DOWN;
                     break;
                 }
 				else if(CheckUpdate_State==2)
@@ -616,6 +663,9 @@ void OTA_Run(void)
                 }
             }
             break;
+        case OTA_WAIT_CONFIRM:  //用户确认是否更新状态
+            OTA_UserConfirm();
+            break;
         case OTA_APP_DOWN:  //下载新程序
             if(OTA_DOWNLOAD_NEW_APP())//成功接收新程序
             {
@@ -624,7 +674,11 @@ void OTA_Run(void)
             }
             else    //失败
             {
+                OLED_Clear();
+                OLED_Printf(0, 0, OLED_8X16, "download error");
+                OLED_Update();
                 printf("APP DOWN ERROR\r\n");
+				OTA_ERR_FLAG=1;
                 OTA_State = OTA_FINISH;
             }
             break;
@@ -637,6 +691,7 @@ void OTA_Run(void)
             else //失败
             {
                 printf("APP CHECK ERROR\r\n");
+				OTA_ERR_FLAG=1;
                 OTA_State = OTA_FINISH;
             }
             break;
@@ -644,6 +699,7 @@ void OTA_Run(void)
             if(OTA_Reset()==0)
             {
                 printf("APP RESET ERROR\r\n");
+				OTA_ERR_FLAG=1;
                 OTA_State = OTA_FINISH;
             }
             break;
@@ -651,7 +707,13 @@ void OTA_Run(void)
             OTA_TCP_DISCONNECT();//返回值不重要，为0时代表断开成功，为1时代表之前已经断开了
             APP_RealGet_Size = 0;//清除APP实际接收到的大小
             ESP01S_PROTOCOL_FLAG = 1;//将连接协议改为MQTT
+            OTA_UPDATE_STATE = 0;//不需要下载，ESP01S中的等待函数增加延时给其他任务让出一些时间
             OTA_LastTime = HAL_GetTick();//记录下此时时间
+            if(OTA_ERR_FLAG)
+			{
+				OTA_ERR_FLAG=0;
+				System_Mode = temp_mode;//使系统回到之前的状态
+			}
             OTA_State = OTA_IDLE;
             break;
         default:

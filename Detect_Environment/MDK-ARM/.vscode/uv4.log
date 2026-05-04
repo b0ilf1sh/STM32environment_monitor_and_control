@@ -1,3 +1,5 @@
-Load "Detect Environment\\Detect_Environment.axf" 
-Erase Done.Programming Done.Verify OK.Application running ...
-Flash Load finished at 21:23:12
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'D:\Keil5\ARM\ARMCC\Bin'
+Build target 'Detect_Environment'
+After Build - User command #1: D:\Keil5\ARM\ARMCC\bin\fromelf --bin -o "Detect Environment\Detect_Environment.bin" "Detect Environment\Detect_Environment.axf"
+"Detect Environment\Detect_Environment.axf" - 0 Error(s), 0 Warning(s).
+Build Time Elapsed:  00:00:03

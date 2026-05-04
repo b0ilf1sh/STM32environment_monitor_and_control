@@ -14,31 +14,34 @@ void task_ir_rec(void *params)
 		{
 			xEventGroupSetBits(g_xEventIR_Rec, IRRec_Event_Buzzer);
 		}
-		
-		xSemaphoreTake(g_xMutex_SystemMode, portMAX_DELAY);
-		
-		if(IR_KeyVal==IR_POWER && IR_RepeatFlag==0)
-		{
-			if(System_Mode == SysMODE_STBY)
-			{
-				System_Mode = SysMODE_NORM;
-			}
-			else
-			{
-				System_Mode = SysMODE_STBY;
-			}
-		}
-		else if(IR_KeyVal==IR_MENU && IR_RepeatFlag==0)
-		{
-			if(System_Mode != SysMODE_SET)
-			{
-				System_Mode = SysMODE_SET;
-				
-				xEventGroupSetBits(g_xEventIR_Rec, IRRec_Event_W25Q64);
-			}
-		}
 
-		xSemaphoreGive(g_xMutex_SystemMode);
+		if(System_Mode != SysMODE_UPDATE)
+		{
+			xSemaphoreTake(g_xMutex_SystemMode, portMAX_DELAY);
+		
+			if(IR_KeyVal==IR_POWER && IR_RepeatFlag==0)
+			{
+				if(System_Mode == SysMODE_STBY)
+				{
+					System_Mode = SysMODE_NORM;
+				}
+				else
+				{
+					System_Mode = SysMODE_STBY;
+				}
+			}
+			else if(IR_KeyVal==IR_MENU && IR_RepeatFlag==0)
+			{
+				if(System_Mode != SysMODE_SET)
+				{
+					System_Mode = SysMODE_SET;
+					
+					xEventGroupSetBits(g_xEventIR_Rec, IRRec_Event_W25Q64);
+				}
+			}
+
+			xSemaphoreGive(g_xMutex_SystemMode);
+		}
 		
 		if(System_Mode == SysMODE_SET)
 		{
@@ -71,7 +74,22 @@ void task_ir_rec(void *params)
 			
 			xSemaphoreGive(g_xMutex_Set);
 		}
+		else if(System_Mode == SysMODE_UPDATE)
+		{
+			if(IR_KeyVal==IR_PREVIOUS && IR_RepeatFlag==0)
+			{
+				xEventGroupSetBits(g_xEventIR_Rec, IRRec_Event_ESP01S_PREVIOUS);
+			}
+			else if(IR_KeyVal==IR_NEXT && IR_RepeatFlag==0)
+			{
+				xEventGroupSetBits(g_xEventIR_Rec, IRRec_Event_ESP01S_NEXT);
+			}
+			else if(IR_KeyVal==IR_START_STOP && IR_RepeatFlag==0)
+			{
+				xEventGroupSetBits(g_xEventIR_Rec, IRRec_Event_ESP01S_COFIRM);
+			}
+		}
 
-		vTaskDelay(10);
+		vTaskDelay(50);
 	}
 }

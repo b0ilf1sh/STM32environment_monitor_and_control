@@ -41,3 +41,4 @@ detect environment\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal
 detect environment\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 detect environment\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 detect environment\freertos.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+detect environment\freertos.o: ../bsp/driver_timer.h

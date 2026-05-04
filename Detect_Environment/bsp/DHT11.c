@@ -2,7 +2,6 @@
 
 uint8_t DHT11_TEMP_DATA[DHT11_DATA_NUM] = {0};//存储温度
 uint8_t DHT11_HUM_DATA[DHT11_DATA_NUM] = {0};//存储湿度
-uint8_t DHT11_NUM=0;//记录存到第几个数据
 
 void DHT11_W_Pin(uint8_t PinState)
 {
@@ -50,7 +49,7 @@ void DHT11_Start(void)
 
 uint8_t DHT11_Wait(uint8_t PinState)
 {
-	uint16_t timeout=10000;
+	uint16_t timeout=5000;
 	while(DHT11_R_Pin()!=PinState)
 	{
 		timeout--;
@@ -125,7 +124,18 @@ uint8_t DHT11_GetData(uint8_t *humidity, uint8_t *temperature)
 void DHT11_Init(void)
 {
 	uint8_t hum=0,tem=0;
-	DHT11_GetData(&hum, &tem);
+
+	mdelay(1000);//延时1s等待DHT11稳定
+
+	taskENTER_CRITICAL();
+	for(uint8_t i=0;i<2; i++)
+	{
+		while(DHT11_GetData(&hum, &tem)!=0);//连续读取两次才能得到实时数据
+	}
+	taskEXIT_CRITICAL();
+
+	// printf("hum=%d%%, tem=%dC\r\n", hum, tem);
+
 	for(uint8_t i=0;i<DHT11_DATA_NUM; i++)
 	{
 		DHT11_HUM_DATA[i] = hum;
@@ -136,19 +146,43 @@ void DHT11_Init(void)
 //获取成功获得的数据的平均值
 void DHT11_Run(uint8_t *humidity, uint8_t *temperature)
 {
-	uint16_t hum_sum=0,temp_sum=0;
+	static uint8_t DHT11_NUM=0;//记录存到第几个数据
 	
 	if(DHT11_GetData(&DHT11_HUM_DATA[DHT11_NUM], &DHT11_TEMP_DATA[DHT11_NUM])==0)
 	{
+		//采集成功
 		DHT11_NUM = (DHT11_NUM + 1) % DHT11_DATA_NUM;
 	}
-	
-	for(uint8_t i=0; i<DHT11_DATA_NUM; i++)
+
+	//临时数组，用于排序，取中位数
+	uint8_t temp_sorted[DHT11_DATA_NUM]={0};
+	uint8_t hum_sorted[DHT11_DATA_NUM]={0};
+
+	//将数据复制到临时数组中
+	memcpy(temp_sorted, DHT11_TEMP_DATA, DHT11_DATA_NUM);
+	memcpy(hum_sorted, DHT11_HUM_DATA, DHT11_DATA_NUM);
+
+	//冒泡排序
+	for(uint8_t i=0; i<DHT11_DATA_NUM-1; i++)
 	{
-		hum_sum += DHT11_HUM_DATA[i];
-		temp_sum += DHT11_TEMP_DATA[i];
+		for(uint8_t j=0; j<DHT11_DATA_NUM-1-i; j++)
+		{
+			if(temp_sorted[j] > temp_sorted[j+1])
+			{
+				uint8_t temp = temp_sorted[j];
+				temp_sorted[j] = temp_sorted[j+1];
+				temp_sorted[j+1] = temp;
+			}
+			
+			if(hum_sorted[j] > hum_sorted[j+1])
+			{
+				uint8_t temp = hum_sorted[j];
+				hum_sorted[j] = hum_sorted[j+1];
+				hum_sorted[j+1] = temp;
+			}
+		}
 	}
 	
-	*humidity = hum_sum / DHT11_DATA_NUM;
-	*temperature = temp_sum / DHT11_DATA_NUM;
+	*humidity = hum_sorted[DHT11_DATA_NUM/2];
+	*temperature = temp_sorted[DHT11_DATA_NUM/2];
 }

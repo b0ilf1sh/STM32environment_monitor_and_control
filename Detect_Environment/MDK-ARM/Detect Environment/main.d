@@ -48,7 +48,10 @@ detect environment\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/ti
 detect environment\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 detect environment\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 detect environment\main.o: ../bsp/IR.h
+detect environment\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+detect environment\main.o: ../APP_Prg/includes.h
 detect environment\main.o: ../bsp/DHT11.h
+detect environment\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 detect environment\main.o: ../bsp/driver_timer.h
 detect environment\main.o: ../bsp/BUZZER.h
 detect environment\main.o: ../bsp/LightSensor.h
@@ -60,9 +63,7 @@ detect environment\main.o: ../bsp/GPIO_IRQ.h
 detect environment\main.o: ../bsp/w25q64.h
 detect environment\main.o: ../bsp/Motor.h
 detect environment\main.o: ../bsp/ESP01S.h
-detect environment\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 detect environment\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
-detect environment\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 detect environment\main.o: ../bsp/OTA.h
 detect environment\main.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 detect environment\main.o: ../bsp/MQTT.h

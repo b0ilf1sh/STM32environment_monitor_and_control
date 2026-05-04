@@ -47,7 +47,10 @@ detect environment\task_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/incl
 detect environment\task_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 detect environment\task_motor.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 detect environment\task_motor.o: ../bsp/IR.h
+detect environment\task_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+detect environment\task_motor.o: ../APP_Prg/includes.h
 detect environment\task_motor.o: ../bsp/DHT11.h
+detect environment\task_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 detect environment\task_motor.o: ../bsp/driver_timer.h
 detect environment\task_motor.o: ../bsp/BUZZER.h
 detect environment\task_motor.o: ../bsp/LightSensor.h
@@ -59,9 +62,7 @@ detect environment\task_motor.o: ../bsp/GPIO_IRQ.h
 detect environment\task_motor.o: ../bsp/w25q64.h
 detect environment\task_motor.o: ../bsp/Motor.h
 detect environment\task_motor.o: ../bsp/ESP01S.h
-detect environment\task_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
 detect environment\task_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
-detect environment\task_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
 detect environment\task_motor.o: ../bsp/OTA.h
 detect environment\task_motor.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 detect environment\task_motor.o: ../bsp/MQTT.h

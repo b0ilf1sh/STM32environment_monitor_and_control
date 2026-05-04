@@ -30,7 +30,7 @@ uint8_t IR_GetRepeatFlag(void)
 void IR_EXTI_Callback(void)
 {
 	static uint8_t s=0, IRNum;
-	uint64_t a;
+	uint16_t a;
 	uint8_t i;
 	
 	if(s==0)

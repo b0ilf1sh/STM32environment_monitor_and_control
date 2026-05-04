@@ -30,12 +30,6 @@ void BUZZER_Music(uint8_t Volume, uint64_t Pre, uint64_t time)
 		vTaskDelay(time);
 		BUZZER_OFF();
 	}
-	else
-	{
-		BUZZER_OFF();
-		vTaskDelay(time);
-	}
-	//mdelay(5);	
 }
 
 void Buzzer_HintVoice(uint8_t volumn)

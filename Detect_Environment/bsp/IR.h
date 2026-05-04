@@ -2,6 +2,8 @@
 #define _IR_H_
 
 #include "main.h"
+#include <stdio.h>
+#include "includes.h"
 
 #define IR_POWER		0xA2
 #define IR_MENU			0xE2

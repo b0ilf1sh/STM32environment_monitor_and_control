@@ -197,18 +197,22 @@ void task_oled(void *params)
 						{
 							if(ir_rec_event & IRRec_Event_OLED_SetSetPlus)
 							{
-								tem[1]++;
+								if(tem[1]+1 < tem[2])
+								{
+									tem[1]++;
+								}
+								
 							}
 							
 							if(ir_rec_event & IRRec_Event_OLED_SetSub)
 							{
-								tem[1]--;
+								if(tem[1] > 1)
+								{
+									tem[1]--;
+								}
+								
 							}
-							
-							if(tem[1] == 0)
-							{
-								tem[1]=1;
-							}
+
 							else if(tem[1]+1 >= tem[2])
 							{
 								tem[1] = tem[2]-2;
@@ -218,15 +222,21 @@ void task_oled(void *params)
 						{
 							if(ir_rec_event & IRRec_Event_OLED_SetSetPlus)
 							{
-								tem[2]++;
+								if(tem[2]+1 < 50)
+								{
+									tem[2]++;
+								}
 							}
 							
 							if(ir_rec_event & IRRec_Event_OLED_SetSub)
 							{
-								tem[2]--;
+								if(tem[2] > tem[1]+1)
+								{
+									tem[2]--;
+								}
 							}
 							
-							if(tem[2]-1 <= tem[1]+1)
+							if(tem[2] <= tem[1]+1)
 							{
 								tem[2]=tem[1]+2;
 							}
@@ -338,33 +348,36 @@ void task_oled(void *params)
 				}
 			}
 		}
-		
-		if(MQTT_CONNECT_FLAG == 0)
+
+		if(System_Mode != SysMODE_UPDATE)
 		{
-			OLED_ShowImage(96, 0, 16, 16, WIFI);
+			if(MQTT_CONNECT_FLAG == 0)
+			{
+				OLED_ShowImage(96, 0, 16, 16, WIFI);
+			}
+			
+			Battery_Value = Battery_GetVoltage();
+			
+			if(Battery_Value >= 2.85)
+			{
+				OLED_ShowImage(112, 0, 16, 16, Battery_75to100);
+			}
+			else if(Battery_Value < 2.85 && Battery_Value >= 2.70)
+			{
+				OLED_ShowImage(112, 0, 16, 16, Battery_50to75);
+			}
+			else if(Battery_Value < 2.70 && Battery_Value >= 2.55)
+			{
+				OLED_ShowImage(112, 0, 16, 16, Battery_25to50);
+			}
+			else if(Battery_Value < 2.55)
+			{
+				OLED_ShowImage(112, 0, 16, 16, Battery_0to25);
+			}
+
+			OLED_Update();//当System_Mode != SysMODE_UPDATE时，正常刷新其他三个模式的显示
 		}
 		
-		Battery_Value = Battery_GetVoltage();
-		
-		if(Battery_Value >= 2.85)
-		{
-			OLED_ShowImage(112, 0, 16, 16, Battery_75to100);
-		}
-		else if(Battery_Value < 2.85 && Battery_Value >= 2.70)
-		{
-			OLED_ShowImage(112, 0, 16, 16, Battery_50to75);
-		}
-		else if(Battery_Value < 2.70 && Battery_Value >= 2.55)
-		{
-			OLED_ShowImage(112, 0, 16, 16, Battery_25to50);
-		}
-		else if(Battery_Value < 2.55)
-		{
-			OLED_ShowImage(112, 0, 16, 16, Battery_0to25);
-		}
-		
-		OLED_Update();
-		
-		vTaskDelay(10);
+		vTaskDelay(100);
 	}
 }
